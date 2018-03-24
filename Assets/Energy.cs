@@ -26,6 +26,10 @@ public class Energy : MonoBehaviour {
 
 	public void DecrementEnergy() {
 		m_energy -= m_rate;
+
+		if (m_energy < 0) {
+			m_energy = 0;
+		}
 		PrintEnergy ();
 	}
 
@@ -39,7 +43,7 @@ public class Energy : MonoBehaviour {
 	}
 
 	public void RefillEnergy(){
-		float CalculatedEnergy = m_energy + m_rate * 5;
+		float CalculatedEnergy = m_energy + m_rate * 2;
 		if (CalculatedEnergy < m_maxEnergy ){
 			m_energy = CalculatedEnergy;
 		} else {
