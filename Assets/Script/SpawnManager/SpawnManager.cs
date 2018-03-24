@@ -127,7 +127,9 @@ public class SpawnManager : MonoBehaviour {
 		mAvailablePlatforms.AddLast (obj);
 		obj.SetActive (false);
 
+		#if UNITY_EDITOR
 		PrintAllLinkedList ();
+		#endif
 	}
 
 

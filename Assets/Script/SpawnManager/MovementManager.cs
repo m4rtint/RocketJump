@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MovementManager : MonoBehaviour {
-	
+
 	List<GameObject> m_platforms = new List<GameObject>();
 
 	[SerializeField]
@@ -14,12 +14,11 @@ public class MovementManager : MonoBehaviour {
 	GameObject m_endSpawnGameObject;
 	float m_endSpawn_X;
 
+
+
 	#region Mono
 	void Awake() {
-		GameObject[] platArray = GameObject.FindGameObjectsWithTag ("PlatformBody");
-		m_platforms.AddRange(platArray);
-		m_endSpawn_X = m_endSpawnGameObject.transform.position.x;
-		m_speedChanges = 1;
+		Setup ();
 	}
 
 	// Update is called once per frame
@@ -27,6 +26,14 @@ public class MovementManager : MonoBehaviour {
 		MoveObjectAtRate (m_platforms, m_speed);
 	}
 	#endregion
+
+
+	void Setup() {
+		GameObject[] platArray = GameObject.FindGameObjectsWithTag ("PlatformBody");
+		m_platforms.AddRange(platArray);
+		m_endSpawn_X = m_endSpawnGameObject.transform.position.x;
+		m_speedChanges = 1;
+	}
 
 	#region Movement
 	void MoveObjectAtRate(List<GameObject> objects, float speed) {

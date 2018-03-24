@@ -1,21 +1,32 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(BoxCollider2D))]
 public class Player : MonoBehaviour {
 
 	Rigidbody2D m_RigidBody;
+
+	[SerializeField]
+	GameObject SpawnManager; 
+	MovementManager m_moveManager;
+
+	//Physics
 	[SerializeField]
 	float upForce;
+	Energy m_energy;
 
-	Energy energy;
+	//Tags
+	string m_DeathTag = "Death";
+	string m_SafeZone = "SafeZone";
 
 	#region Mono
 	void Awake(){
 		m_RigidBody = GetComponent<Rigidbody2D>();
-		energy = GetComponent<Energy>();
+		m_energy = GetComponent<Energy>();
+		m_moveManager = SpawnManager.GetComponent<MovementManager> ();
 	}
 
 
@@ -29,14 +40,14 @@ public class Player : MonoBehaviour {
 //		if (StateManager.instance.CurrentState != Game) {
 //			//TODO Freeze everything
 //		}
-		if(DidInput() && energy.IsEnoughEnergy()){
+		if(DidInput() && m_energy.IsEnoughEnergy()){
 			Rocket ();
-			energy.DecrementEnergy();
+			m_energy.DecrementEnergy();
 		}
 	}
 
 	bool DidInput() {
-		return Input.GetMouseButton (0);
+		return Input.GetMouseButton (0) || Input.GetKey(KeyCode.Space);
 	}
 
 	void Rocket() {
@@ -48,41 +59,50 @@ public class Player : MonoBehaviour {
 	#region Collision
 	void OnCollisionEnter2D(Collision2D other) {
 		GameObject otherObj = other.gameObject;
-//		if (other.gameObject.tag == "Death"){
-//			Death();
-//		}
+		if (other.gameObject.tag == m_DeathTag){
+			Death();
+		}
 
-		if (otherObj.tag == "SafeZone"){
-			//TODO - Check if platform already stepped on before
-			otherObj.GetComponent<Platform>().SteppedOnPlatform();
+		if (otherObj.tag == m_SafeZone){
+			//Check if platform already stepped on before
+			m_moveManager.StopSpeed();
 //			ScoreManager.instance.IncrementScore();
 		}
 	}
 
 	void OnCollisionStay2D(Collision2D other) {
 		GameObject otherObj = other.gameObject;
-		if (otherObj.tag == "SafeZone"){
-			energy.RefillEnergy ();
+		if (otherObj.tag == m_SafeZone){
+			m_energy.RefillEnergy ();
 		}
 	}
 
 	void OnCollisionExit2D(Collision2D other) {
 		GameObject otherObj = other.gameObject;
-		if (otherObj.tag == "SafeZone") {
-			otherObj.GetComponent<Platform>().SteppedOffPlatform();
+		if (otherObj.tag == m_SafeZone) {
+			m_moveManager.PlaySpeed ();
 		}
 	}
 	#endregion
 
 	#region Death
 
-//	void Death() {
-//		//Set Energy to 0
-//		energy.NoMoreEnergy();
-//
-//		//Stop Platform Motion
-//		MotionManager.instance.Stop();
-//	}
+	void Death() {
+		//Set Energy to 0
+		m_energy.NoMoreEnergy();
+
+		//Stop Platform Motion
+		m_moveManager.StopSpeed();
+		DebugText.instance.SetDebugText ("Death");
+		StartCoroutine ("Respawn");
+	}
+
+
+	//DEBUG
+	IEnumerator Respawn() {
+		yield return new WaitForSeconds(3);
+		SceneManager.LoadScene (0);
+	}
 
 	#endregion
 }
