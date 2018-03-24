@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MovementManager : MonoBehaviour {
-
-
-
+	
 	List<GameObject> m_platforms = new List<GameObject>();
 
 	[SerializeField]
 	float m_speed;
+	float m_speedChanges;
 
 	[SerializeField]
 	GameObject m_endSpawnGameObject;
@@ -20,6 +19,7 @@ public class MovementManager : MonoBehaviour {
 		GameObject[] platArray = GameObject.FindGameObjectsWithTag ("PlatformBody");
 		m_platforms.AddRange(platArray);
 		m_endSpawn_X = m_endSpawnGameObject.transform.position.x;
+		m_speedChanges = 1;
 	}
 
 	// Update is called once per frame
@@ -33,9 +33,17 @@ public class MovementManager : MonoBehaviour {
 		foreach(GameObject obj in objects) {
 			Vector3 current = obj.transform.position;
 			Vector3 destination = new Vector3(m_endSpawn_X, obj.transform.position.y,0);
-			obj.transform.position = Vector3.MoveTowards (current, destination, Time.deltaTime * speed);
+			obj.transform.position = Vector3.MoveTowards (current, destination, Time.deltaTime * speed * m_speedChanges);
 		}
 	}	
+
+	public void StopSpeed() {
+		m_speedChanges = 0;
+	}
+
+	public void PlaySpeed() {
+		m_speedChanges = 1;
+	}
 	#endregion
 
 	#region Platforms

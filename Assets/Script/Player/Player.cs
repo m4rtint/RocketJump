@@ -65,6 +65,13 @@ public class Player : MonoBehaviour {
 			energy.RefillEnergy ();
 		}
 	}
+
+	void OnCollisionExit2D(Collision2D other) {
+		GameObject otherObj = other.gameObject;
+		if (otherObj.tag == "SafeZone") {
+			otherObj.GetComponent<Platform>().SteppedOffPlatform();
+		}
+	}
 	#endregion
 
 	#region Death

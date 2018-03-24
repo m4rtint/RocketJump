@@ -13,6 +13,11 @@ public class Platform : MonoBehaviour {
 	#region DidStep
 	public void SteppedOnPlatform(){
 		m_DidStepOn = true;
+		gameObject.transform.parent.parent.gameObject.GetComponent<MovementManager> ().StopSpeed ();
+	}
+
+	public void SteppedOffPlatform(){
+		gameObject.transform.parent.parent.gameObject.GetComponent<MovementManager> ().PlaySpeed ();
 	}
 
 	public void reset(){
