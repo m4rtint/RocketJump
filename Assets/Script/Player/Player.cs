@@ -12,8 +12,6 @@ public class Player : MonoBehaviour {
 	[SerializeField]
 	GameObject SpawnManager; 
 	MovementManager m_moveManager;
-	//Player Property
-	public bool alive = true;
 
 	//Physics
 	[SerializeField]
@@ -39,9 +37,6 @@ public class Player : MonoBehaviour {
 	#endregion
 	#region Movement
 	void Movement() {
-//		if (StateManager.instance.CurrentState != Game) {
-//			//TODO Freeze everything
-//		}
 		if(DidInput() && m_energy.IsEnoughEnergy()){
 			Rocket ();
 			m_energy.DecrementEnergy();
@@ -68,7 +63,7 @@ public class Player : MonoBehaviour {
 		if (otherObj.tag == m_SafeZone){
 			//Check if platform already stepped on before
 			m_moveManager.StopSpeed();
-//			ScoreManager.instance.IncrementScore();
+//			TODO ScoreManager.instance.IncrementScore();
 		}
 	}
 
@@ -92,11 +87,9 @@ public class Player : MonoBehaviour {
 	void Death() {
 		//Set Energy to 0
 		m_energy.NoMoreEnergy();
-
-		//TODO Change this to state
-		alive = false;
-		//Stop Platform Motion
-		m_moveManager.StopSpeed();
+		//Set State
+		StateManager.instance.NextState();
+		//DEBUG
 		DebugText.instance.SetDebugText ("Death");
 		StartCoroutine ("Respawn");
 	}

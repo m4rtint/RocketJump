@@ -54,8 +54,8 @@ public class Energy : MonoBehaviour {
 	}
 
 	public void RefillEnergy(){
-		//TODO - Change this to checking the state
-		if (!GetComponent<Player>().alive) {return;}
+		//Change this to checking the state
+		if (StateManager.instance.CurrentState() == GameState.GameOver) {return;}
 
 		float CalculatedEnergy = m_energy + m_rate * 2;
 		if (CalculatedEnergy < m_maxEnergy ){

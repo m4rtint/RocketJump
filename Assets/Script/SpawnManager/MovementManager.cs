@@ -23,7 +23,9 @@ public class MovementManager : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		MoveObjectAtRate (m_platforms, m_speed);
+		if (StateManager.instance.CurrentState() == GameState.Game) {
+			MoveObjectAtRate (m_platforms, m_speed);
+		}
 	}
 	#endregion
 
