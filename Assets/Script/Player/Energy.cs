@@ -11,6 +11,11 @@ public class Energy : MonoBehaviour {
 	[SerializeField]
 	float m_rate;
 
+	#if UNITY_EDITOR
+	[Header("DEBUG")]
+	public bool InfiniteEnergy;
+	#endif
+
 	#region Mono
 	void Awake() {
 		Setup();
@@ -39,10 +44,19 @@ public class Energy : MonoBehaviour {
 	}
 
 	public bool IsEnoughEnergy() {
+		#if UNITY_EDITOR
+		if (InfiniteEnergy){
+			return InfiniteEnergy;
+		} else {
+		#endif
 		return m_energy > 0;
+		}
 	}
 
 	public void RefillEnergy(){
+		//TODO - Change this to checking the state
+		if (!GetComponent<Player>().alive) {return;}
+
 		float CalculatedEnergy = m_energy + m_rate * 2;
 		if (CalculatedEnergy < m_maxEnergy ){
 			m_energy = CalculatedEnergy;

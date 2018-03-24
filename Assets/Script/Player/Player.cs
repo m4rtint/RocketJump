@@ -12,6 +12,8 @@ public class Player : MonoBehaviour {
 	[SerializeField]
 	GameObject SpawnManager; 
 	MovementManager m_moveManager;
+	//Player Property
+	public bool alive = true;
 
 	//Physics
 	[SerializeField]
@@ -91,6 +93,8 @@ public class Player : MonoBehaviour {
 		//Set Energy to 0
 		m_energy.NoMoreEnergy();
 
+		//TODO Change this to state
+		alive = false;
 		//Stop Platform Motion
 		m_moveManager.StopSpeed();
 		DebugText.instance.SetDebugText ("Death");

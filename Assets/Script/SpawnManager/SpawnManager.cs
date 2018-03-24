@@ -10,7 +10,6 @@ public class SpawnManager : MonoBehaviour {
 	[SerializeField]
 	GameObject[] loadedPlatforms;
 
-	GameObject[] m_platforms;
 
 	LinkedList<GameObject> mAvailablePlatforms = new LinkedList<GameObject>();
 	LinkedList<GameObject> mPlatformsInMotion = new LinkedList<GameObject> ();
@@ -32,9 +31,7 @@ public class SpawnManager : MonoBehaviour {
 
 	#region Mono
 	void Awake(){
-		m_platforms = GameObject.FindGameObjectsWithTag ("PlatformBody");
 		Setup ();
-
 	}
 	
 	// Update is called once per frame
@@ -44,12 +41,12 @@ public class SpawnManager : MonoBehaviour {
 
 	#endregion
 
+	#region Setup
 	//For the Interface
 	void Setup() {
 		//Add platforms to platforms in motion
-		for (int i = 0; i < m_platforms.Length; i++) {
-			mPlatformsInMotion.AddLast (m_platforms[i]);
-		}
+		insertSortedArray (mPlatformsInMotion, GameObject.FindGameObjectsWithTag ("PlatformBody"));
+
 		RandomizeSpawnDistance ();
 		SetUpEndSpawnDelegate ();
 		SetVariables ();
@@ -58,6 +55,30 @@ public class SpawnManager : MonoBehaviour {
 	void SetVariables() {
 		m_spawnAt_X = startSpawnGameObject.transform.localPosition.x;
 	}
+
+	void insertSortedArray(LinkedList<GameObject> m_list, GameObject[] m_array) {
+		for (int i = 0; i < m_array.Length; i++) {
+			
+			LinkedListNode<GameObject> temp = m_list.First;
+
+			while (temp != null) {
+				//If Current node is smaller than this node, place in front.
+				float nodeX = temp.Value.transform.position.x;
+				float arrayX = m_array [i].transform.position.x;
+				if (arrayX < nodeX) {
+					m_list.AddBefore (temp,m_array [i]);
+					break;
+				}
+			
+				temp = temp.Next;
+			}
+			if (temp == null) {
+				m_list.AddLast (m_array [i]);
+			}
+		}
+	}
+
+	#endregion
 
 
 	#region Spawn
@@ -123,16 +144,23 @@ public class SpawnManager : MonoBehaviour {
 	}
 
 	void PlatformEnteredEnd(GameObject obj){
+		#if UNITY_EDITOR
+		Debug.Log("Before");
+		PrintAllLinkedList ();
+		#endif
+
 		mPlatformsInMotion.RemoveFirst ();
 		mAvailablePlatforms.AddLast (obj);
 		obj.SetActive (false);
 
+
 		#if UNITY_EDITOR
+		Debug.Log("After");
 		PrintAllLinkedList ();
 		#endif
 	}
-
-
+		
+		
 	#endregion
 
 	#region DEBUG

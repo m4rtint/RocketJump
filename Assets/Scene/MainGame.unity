@@ -157,6 +157,16 @@ Prefab:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 61263974002701894, guid: 6dec66d38c7a04efe978051be3de5486,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 0.64102566
+      objectReference: {fileID: 0}
+    - target: {fileID: 61263974002701894, guid: 6dec66d38c7a04efe978051be3de5486,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 0.21794872
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6dec66d38c7a04efe978051be3de5486, type: 2}
   m_IsPrefabParent: 0
@@ -202,6 +212,16 @@ Prefab:
     - target: {fileID: 1539414725756338, guid: 5ee767b61cf79433b9abfed27148082b, type: 2}
       propertyPath: m_Name
       value: Platform_D
+      objectReference: {fileID: 0}
+    - target: {fileID: 61496667805888762, guid: 5ee767b61cf79433b9abfed27148082b,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 0.64102566
+      objectReference: {fileID: 0}
+    - target: {fileID: 61496667805888762, guid: 5ee767b61cf79433b9abfed27148082b,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 0.21794872
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5ee767b61cf79433b9abfed27148082b, type: 2}
@@ -627,6 +647,16 @@ Prefab:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 61496667805888762, guid: 5ee767b61cf79433b9abfed27148082b,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 0.64102566
+      objectReference: {fileID: 0}
+    - target: {fileID: 61496667805888762, guid: 5ee767b61cf79433b9abfed27148082b,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 0.21794872
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5ee767b61cf79433b9abfed27148082b, type: 2}
   m_IsPrefabParent: 0
@@ -673,6 +703,16 @@ Prefab:
         type: 2}
       propertyPath: m_IsTrigger
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 61558768988863246, guid: 7ed193fc050644d94b7eaad2847e8e85,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 0.64102566
+      objectReference: {fileID: 0}
+    - target: {fileID: 61558768988863246, guid: 7ed193fc050644d94b7eaad2847e8e85,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 0.21794872
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7ed193fc050644d94b7eaad2847e8e85, type: 2}
