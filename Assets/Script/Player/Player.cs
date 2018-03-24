@@ -10,12 +10,12 @@ public class Player : MonoBehaviour {
 	[SerializeField]
 	float upForce;
 
-//	Energy energy;
+	Energy energy;
 
 	#region Mono
 	void Awake(){
 		m_RigidBody = GetComponent<Rigidbody2D>();
-//		energy = GetComponent<Energy>();
+		energy = GetComponent<Energy>();
 	}
 
 
@@ -29,10 +29,9 @@ public class Player : MonoBehaviour {
 //		if (StateManager.instance.CurrentState != Game) {
 //			//TODO Freeze everything
 //		}
-		if(DidInput()){
-			Debug.Log ("Input");
+		if(DidInput() && energy.IsEnoughEnergy()){
 			Rocket ();
-//			GetComponent<Energy>().DecrementEnergy();
+			energy.DecrementEnergy();
 		}
 	}
 
@@ -46,18 +45,29 @@ public class Player : MonoBehaviour {
 	}
 	#endregion
 
-	#region Death
-//	void OnCollisionEnter2D(Collision2D other) {
-//		if (other.tag == "Death"){
+	#region Collision
+	void OnCollisionEnter2D(Collision2D other) {
+		GameObject otherObj = other.gameObject;
+//		if (other.gameObject.tag == "Death"){
 //			Death();
 //		}
-//
-//		if (other.tag == "safezone"){
-//			//TODO - Check if platform already stepped on before
-//			other.GetComponent<Platform>().SteppedOnPlatform();
+
+		if (otherObj.tag == "SafeZone"){
+			//TODO - Check if platform already stepped on before
+			otherObj.GetComponent<Platform>().SteppedOnPlatform();
 //			ScoreManager.instance.IncrementScore();
-//		}
-//	}
+		}
+	}
+
+	void OnCollisionStay2D(Collision2D other) {
+		GameObject otherObj = other.gameObject;
+		if (otherObj.tag == "SafeZone"){
+			energy.RefillEnergy ();
+		}
+	}
+	#endregion
+
+	#region Death
 
 //	void Death() {
 //		//Set Energy to 0

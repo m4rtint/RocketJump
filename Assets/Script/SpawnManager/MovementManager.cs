@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MovementManager : MonoBehaviour {
 
+
+
 	List<GameObject> m_platforms = new List<GameObject>();
 
 	[SerializeField]

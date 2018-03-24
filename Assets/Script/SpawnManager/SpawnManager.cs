@@ -10,8 +10,6 @@ public class SpawnManager : MonoBehaviour {
 	[SerializeField]
 	GameObject[] loadedPlatforms;
 
-	int m_spawnDistance;
-
 	GameObject[] m_platforms;
 
 	LinkedList<GameObject> mAvailablePlatforms = new LinkedList<GameObject>();
@@ -19,6 +17,7 @@ public class SpawnManager : MonoBehaviour {
 
 	//Spawn Properties
 	float m_spawnAt_X;
+	int m_spawnDistance;
 	[Header("Spawn Height Difference")]
 	[SerializeField]
 	float m_Max_y;
@@ -127,6 +126,8 @@ public class SpawnManager : MonoBehaviour {
 		mPlatformsInMotion.RemoveFirst ();
 		mAvailablePlatforms.AddLast (obj);
 		obj.SetActive (false);
+
+		PrintAllLinkedList ();
 	}
 
 
@@ -134,6 +135,13 @@ public class SpawnManager : MonoBehaviour {
 
 	#region DEBUG
 	#if UNITY_EDITOR
+
+	void PrintAllLinkedList() {
+		PrintLinkedList (mAvailablePlatforms.First, "Available Platforms");
+		PrintLinkedList (mPlatformsInMotion.First, "Motion Platforms");
+		Debug.Log ("@@@@@@@@@@@@@@@@@@");
+	}
+
 	void PrintLinkedList(LinkedListNode<GameObject> node, string NameOfList) {
 		string list = NameOfList;
 		LinkedListNode<GameObject> temp = node;

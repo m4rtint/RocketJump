@@ -10,7 +10,7 @@ public class EndSpawn : MonoBehaviour {
 	public PlatformReachedEnd OnPlatformEnter;
 
 	void OnTriggerEnter2D(Collider2D other) {
-		OnPlatformEnter(other.gameObject);
+		OnPlatformEnter(other.gameObject.transform.parent.gameObject);
 	}
-
+		
 }
