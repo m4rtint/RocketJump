@@ -69,7 +69,7 @@ public class Energy : MonoBehaviour {
 
 	#region DEBUG
 	void PrintEnergy(){
-		DebugText.instance.SetDebugText ("Energy: " + m_energy);
+		DebugText.instance.SetEnergyText ("Energy: " + m_energy);
 	}
 	#endregion
 }

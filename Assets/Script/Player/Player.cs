@@ -63,8 +63,20 @@ public class Player : MonoBehaviour {
 		if (otherObj.tag == m_SafeZone){
 			//Check if platform already stepped on before
 			m_moveManager.StopSpeed();
-//			TODO ScoreManager.instance.IncrementScore();
+			IncrementPoint (otherObj);
+			
 		}
+	}
+
+	void IncrementPoint(GameObject obj) {
+		//Platform set as Stepped on
+		Platform plat = obj.GetComponent<Platform> ();
+		//Increment points
+		if (!plat.m_DidStepOn) {
+			ScoreManager.instance.IncrementScore ();
+		}
+		plat.SteppedOnPlatform ();
+
 	}
 
 	void OnCollisionStay2D(Collision2D other) {
@@ -89,8 +101,10 @@ public class Player : MonoBehaviour {
 		m_energy.NoMoreEnergy();
 		//Set State
 		StateManager.instance.NextState();
+		//Save Score
+		ScoreManager.instance.SaveScore();
 		//DEBUG
-		DebugText.instance.SetDebugText ("Death");
+		DebugText.instance.SetEnergyText ("Death");
 		StartCoroutine ("Respawn");
 	}
 

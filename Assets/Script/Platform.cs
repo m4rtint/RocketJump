@@ -15,7 +15,7 @@ public class Platform : MonoBehaviour {
 		m_DidStepOn = true;
 	}
 
-	public void reset(){
+	void OnEnable() {
 		m_DidStepOn = false;
 	}
 	#endregion
