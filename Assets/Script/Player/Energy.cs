@@ -47,10 +47,10 @@ public class Energy : MonoBehaviour {
 		#if UNITY_EDITOR
 		if (InfiniteEnergy){
 			return InfiniteEnergy;
-		} else {
+		} 
 		#endif
 		return m_energy > 0;
-		}
+
 	}
 
 	public void RefillEnergy(){

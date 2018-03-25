@@ -18,7 +18,9 @@ public class ScoreManager : MonoBehaviour {
 	}
 
 	public void SaveScore() {
-		PlayerPrefs.SetInt ("HighScore", m_score);
+		if (HighScore () < m_score) {
+			PlayerPrefs.SetInt ("HighScore", m_score);
+		}
 	}
 
 	public int HighScore() {

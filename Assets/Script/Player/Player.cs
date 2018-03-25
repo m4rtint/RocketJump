@@ -21,6 +21,9 @@ public class Player : MonoBehaviour {
 	//Tags
 	string m_DeathTag = "Death";
 	string m_SafeZone = "SafeZone";
+	[Header("DEBUG")]
+	[SerializeField]
+	float TimeTilReset;
 
 	#region Mono
 	void Awake(){
@@ -111,7 +114,7 @@ public class Player : MonoBehaviour {
 
 	//DEBUG
 	IEnumerator Respawn() {
-		yield return new WaitForSeconds(3);
+		yield return new WaitForSeconds(TimeTilReset);
 		SceneManager.LoadScene (0);
 	}
 
