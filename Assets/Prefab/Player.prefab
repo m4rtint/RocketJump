@@ -114,8 +114,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpawnManager: {fileID: 0}
-  alive: 1
   upForce: 200
+  TimeTilReset: 1
 --- !u!212 &212991007209075254
 SpriteRenderer:
   m_ObjectHideFlags: 1

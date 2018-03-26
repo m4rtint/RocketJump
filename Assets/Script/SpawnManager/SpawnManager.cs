@@ -16,21 +16,25 @@ public class SpawnManager : MonoBehaviour {
 
 	//Spawn Properties
 	float m_spawnAt_X;
-	int m_spawnDistance;
 	[Header("Spawn Height Difference")]
 	[SerializeField]
 	float m_Max_y;
 	[SerializeField]
 	float m_Min_y;
+    [SerializeField]
+    float m_rangeDifference;
 
-	[Header("Spawn Distance Difference")]
+
+    [Header("Spawn Distance Difference")]
 	[SerializeField]
 	float m_Max_Dist;
 	[SerializeField]
 	float m_Min_Dist;
+    int m_spawnDistance;
 
-	#region Mono
-	void Awake(){
+
+    #region Mono
+    void Awake(){
 		Setup ();
 	}
 	
@@ -80,7 +84,6 @@ public class SpawnManager : MonoBehaviour {
 
 	#endregion
 
-
 	#region Spawn
 	void SpawnWhenEnoughDistance() {
 		if (IsSpawnDistanceFarEnough()) {
@@ -124,7 +127,33 @@ public class SpawnManager : MonoBehaviour {
 	}
 
 	void SetPlatformPosition(GameObject plat) {
-		int setPosition_Y = (int)Random.Range (m_Min_y, m_Max_y);
+        //grab last active plat - Height
+        float lastPlat = mPlatformsInMotion.Last.Value.transform.position.y;
+        int setPosition_Y = 0;
+
+
+        if (Random.Range(0,10) % 2 == 0)
+        {
+            //Lower
+            setPosition_Y = (int)(lastPlat - m_rangeDifference);
+        } else
+        {
+            //Higher
+            setPosition_Y = (int)(lastPlat + m_rangeDifference);
+        }
+        
+
+        if (setPosition_Y < m_Min_y)
+        {
+            setPosition_Y = (int)m_Min_y;
+        }
+
+        if (setPosition_Y > m_Max_y)
+        {
+            setPosition_Y = (int)m_Max_y;
+        }
+
+		
 		plat.transform.position = new Vector3(m_spawnAt_X, setPosition_Y, 0);
 	}
 

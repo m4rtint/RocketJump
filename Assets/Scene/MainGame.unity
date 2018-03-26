@@ -164,7 +164,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4163972452594970, guid: edf8f9229f3f149f0a50bcc024d2a691, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -6
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 4163972452594970, guid: edf8f9229f3f149f0a50bcc024d2a691, type: 2}
       propertyPath: m_LocalPosition.y
@@ -353,7 +353,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 23
+    m_FontSize: 106
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -526,7 +526,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4009076955838506, guid: 066ff263ed2d0418693b2ae7aafb978c, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4009076955838506, guid: 066ff263ed2d0418693b2ae7aafb978c, type: 2}
       propertyPath: m_LocalPosition.y
@@ -693,8 +693,9 @@ MonoBehaviour:
   - {fileID: 1539414725756338, guid: 5ee767b61cf79433b9abfed27148082b, type: 2}
   - {fileID: 1466526292588902, guid: 7ed193fc050644d94b7eaad2847e8e85, type: 2}
   - {fileID: 1688153859844610, guid: 6dec66d38c7a04efe978051be3de5486, type: 2}
-  m_Max_y: 0
-  m_Min_y: -4
+  m_Max_y: 3
+  m_Min_y: -5
+  m_rangeDifference: 1
   m_Max_Dist: 4
   m_Min_Dist: 2
 --- !u!4 &1539652782
@@ -901,7 +902,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 78
+    m_FontSize: 95
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
