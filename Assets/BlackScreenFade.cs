@@ -14,11 +14,17 @@ public class BlackScreenFade : MonoBehaviour {
 	//If GameObject set as active in the beginning on scene Fade in
 	void Awake() {
 		m_ScreenCover = GetComponent<Image> ();
+		FadeInIfNeeded ();
 	}
 
 	#endregion
 
 	#region active
+	void FadeInIfNeeded() {
+		if (StateManager.instance.CurrentState () == GameState.Game) {
+			StartFadeIn ();	
+		}
+	}
 	public void StartFadeIn() {
 		m_ScreenCover.color = Color.black;
 		m_ScreenCover.CrossFadeAlpha (0, TimeTakenToFade, true);
