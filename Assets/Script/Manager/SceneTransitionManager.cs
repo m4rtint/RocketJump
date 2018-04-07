@@ -8,8 +8,6 @@ public class SceneTransitionManager : MonoBehaviour {
 
 	[SerializeField]
 	float m_TimeTakenToFade;
-	[SerializeField]
-	string[] m_SceneNames;
 
 	Image m_ScreenCover;
 
@@ -34,13 +32,19 @@ public class SceneTransitionManager : MonoBehaviour {
 	public void StartFadeIn() {
 		m_ScreenCover.color = Color.black;
 		m_ScreenCover.CrossFadeAlpha (0, m_TimeTakenToFade, true);
+		StartCoroutine ("DeactivateBlackScreen");
 	}
 
 	public void StartFadeOut() {
+		gameObject.SetActive (true);
 		m_ScreenCover.color = Color.clear;
 		m_ScreenCover.CrossFadeAlpha (1, m_TimeTakenToFade, true);
 		StartCoroutine ("StartChangeScene");
+	}
 
+	IEnumerator DeactivateBlackScreen() {
+		yield return new WaitForSeconds (m_TimeTakenToFade);
+		gameObject.SetActive (false);
 	}
 	#endregion
 
@@ -52,8 +56,21 @@ public class SceneTransitionManager : MonoBehaviour {
 
 	void ChangeScene () {
 		StateManager.instance.NextState ();
-		string SceneName = m_SceneNames [StateManager.instance.CurrentStateInteger ()];
-		SceneManager.LoadScene (SceneName);
+		SceneManager.LoadScene (GetNextSceneIndex ());
+	}
+
+	int GetNextSceneIndex() {
+		int numberOfScenes = SceneManager.sceneCount;
+		int currentScene = SceneManager.GetActiveScene ().buildIndex;
+		currentScene++;
+
+		//Reset back to scene 0
+		if (currentScene >= numberOfScenes) {
+			currentScene = 0;
+		}
+
+		return currentScene;
+
 	}
 
 	#endregion

@@ -40,7 +40,7 @@ public class Player : MonoBehaviour {
 	#endregion
 	#region Movement
 	void Movement() {
-		if(DidInput() && m_energy.IsEnoughEnergy()){
+		if(PlayerMovementAllowed()){
 			Rocket ();
 			m_energy.DecrementEnergy();
 		}
@@ -48,6 +48,10 @@ public class Player : MonoBehaviour {
 
 	bool DidInput() {
 		return Input.GetMouseButton (0) || Input.GetKey(KeyCode.Space);
+	}
+
+	bool PlayerMovementAllowed() {
+		return DidInput () && m_energy.IsEnoughEnergy () && StateManager.instance.CurrentState() == GameState.Game;
 	}
 
 	void Rocket() {
@@ -106,9 +110,13 @@ public class Player : MonoBehaviour {
 		StateManager.instance.NextState();
 		//Save Score
 		ScoreManager.instance.SaveScore();
+		//Setup Game Over Panel
+		UIManager.instance.StartUpGameOverPanel();
 		//DEBUG
 		DebugText.instance.SetEnergyText ("Death");
-		StartCoroutine ("Respawn");
+		//Set Game Over
+//		StartCoroutine ("Respawn");
+
 	}
 
 

@@ -53,4 +53,8 @@ public class StateManager : MonoBehaviour {
 	public int CurrentStateInteger() {
 		return (int)m_CurrentState;
 	}
+
+	public void SetState(GameState state) {
+		m_CurrentState = state;
+	}
 }
