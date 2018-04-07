@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class Energy : MonoBehaviour {
 
-	float m_maxEnergy;
+	public delegate void EnergyDelegate(float energy);
+	public EnergyDelegate onEnergyUpdate;
+
+	public float m_maxEnergy { get; private set; }
 	public float m_energy {get; private set;}
 
 	[Header("Rate for energy to decrease")]
@@ -35,11 +38,13 @@ public class Energy : MonoBehaviour {
 		if (m_energy < 0) {
 			m_energy = 0;
 		}
+		onEnergyUpdate (m_energy);
 		PrintEnergy ();
 	}
 
 	public void NoMoreEnergy() {
 		m_energy = 0;
+		onEnergyUpdate (m_energy);
 		PrintEnergy ();
 	}
 
@@ -63,6 +68,7 @@ public class Energy : MonoBehaviour {
 		} else {
 			m_energy = m_maxEnergy;
 		}
+		onEnergyUpdate (m_energy);
 		PrintEnergy ();
 	}
 	#endregion
