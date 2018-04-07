@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class UIManager : MonoBehaviour {
 
@@ -11,6 +12,8 @@ public class UIManager : MonoBehaviour {
 	float m_LagTimeBeforeRising;
 	[SerializeField]
 	GameObject m_EnergyBar;
+	[SerializeField]
+	GameObject m_Score;
 
 	[Header("Game Properties")]
 	[SerializeField]
@@ -47,6 +50,13 @@ public class UIManager : MonoBehaviour {
 		m_energyScale.x = energy / m_energy.m_maxEnergy;
 		m_EnergyBar.GetComponent<RectTransform> ().localScale = m_energyScale;
 	}
+	#endregion
+
+	#region Score UI
+	public void UpdateScore(float score) {
+		m_Score.GetComponent<TextMeshProUGUI> ().text = score.ToString();
+	}
+
 	#endregion
 		
 

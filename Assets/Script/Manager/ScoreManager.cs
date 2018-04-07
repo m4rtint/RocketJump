@@ -9,12 +9,12 @@ public class ScoreManager : MonoBehaviour {
 
 	void Awake(){
 		instance = this;
-		m_score = 0;
+		m_score = -1;
 	}
 
 	public void IncrementScore(){
 		m_score++;
-		DebugText.instance.SetScoreText ("Score: " + m_score +"\nBestScore: "+HighScore());
+		UIManager.instance.UpdateScore (m_score);
 	}
 
 	public void SaveScore() {
