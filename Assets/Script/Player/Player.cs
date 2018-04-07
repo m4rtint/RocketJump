@@ -112,8 +112,6 @@ public class Player : MonoBehaviour {
 		ScoreManager.instance.SaveScore();
 		//Setup Game Over Panel
 		UIManager.instance.StartUpGameOverPanel();
-		//DEBUG
-		DebugText.instance.SetEnergyText ("Death");
 		//Set Game Over
 //		StartCoroutine ("Respawn");
 

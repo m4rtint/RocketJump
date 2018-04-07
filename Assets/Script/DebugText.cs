@@ -6,9 +6,6 @@ using UnityEngine.UI;
 public class DebugText : MonoBehaviour {
 
 	[SerializeField]
-	GameObject EnergyText;
-
-	[SerializeField]
 	GameObject ScoreText;
 
 	public static DebugText instance = null;
@@ -19,12 +16,7 @@ public class DebugText : MonoBehaviour {
 	{
 		instance = this;
 	}
-
-
-	public void SetEnergyText(string text){
-		EnergyText.GetComponent<Text> ().text = text;
-	}
-
+		
 	public void SetScoreText(string text) {
 		ScoreText.GetComponent<Text> ().text = text;
 	}

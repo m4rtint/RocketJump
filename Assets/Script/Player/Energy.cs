@@ -39,13 +39,11 @@ public class Energy : MonoBehaviour {
 			m_energy = 0;
 		}
 		onEnergyUpdate (m_energy);
-		PrintEnergy ();
 	}
 
 	public void NoMoreEnergy() {
 		m_energy = 0;
 		onEnergyUpdate (m_energy);
-		PrintEnergy ();
 	}
 
 	public bool IsEnoughEnergy() {
@@ -69,13 +67,7 @@ public class Energy : MonoBehaviour {
 			m_energy = m_maxEnergy;
 		}
 		onEnergyUpdate (m_energy);
-		PrintEnergy ();
 	}
 	#endregion
 
-	#region DEBUG
-	void PrintEnergy(){
-		DebugText.instance.SetEnergyText ("Energy: " + m_energy);
-	}
-	#endregion
 }
