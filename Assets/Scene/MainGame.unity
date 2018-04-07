@@ -224,7 +224,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 475095615}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -394,8 +394,8 @@ RectTransform:
   - {fileID: 635531339}
   - {fileID: 1878965792}
   - {fileID: 1045194906}
-  - {fileID: 1214536587}
   - {fileID: 209207033}
+  - {fileID: 1214536587}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -599,7 +599,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 349ab355081974c6daccf149d41a2fb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnergyText: {fileID: 635531338}
   ScoreText: {fileID: 1878965791}
 --- !u!1001 &838744389
 Prefab:
@@ -905,7 +904,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 475095615}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -923,7 +922,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c5d95efbf1b94a13a49459b27b5bdb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TimeTakenToFade: 5
+  m_TimeTakenToFade: 1
 --- !u!114 &1214536589
 MonoBehaviour:
   m_ObjectHideFlags: 0
