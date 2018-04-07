@@ -21,9 +21,6 @@ public class Player : MonoBehaviour {
 	//Tags
 	string m_DeathTag = "Death";
 	string m_SafeZone = "SafeZone";
-	[Header("DEBUG")]
-	[SerializeField]
-	float TimeTilReset;
 
 	#region Mono
 	void Awake(){
@@ -104,6 +101,9 @@ public class Player : MonoBehaviour {
 	#region Death
 
 	void Death() {
+		if (StateManager.instance.CurrentState() != GameState.Game) {
+			return;
+		} 
 		//Set Energy to 0
 		m_energy.NoMoreEnergy();
 		//Set State
@@ -112,17 +112,8 @@ public class Player : MonoBehaviour {
 		ScoreManager.instance.SaveScore();
 		//Setup Game Over Panel
 		UIManager.instance.StartUpGameOverPanel();
-		//Set Game Over
-//		StartCoroutine ("Respawn");
-
 	}
-
-
-	//DEBUG
-	IEnumerator Respawn() {
-		yield return new WaitForSeconds(TimeTilReset);
-		SceneManager.LoadScene (0);
-	}
+		
 
 	#endregion
 }
