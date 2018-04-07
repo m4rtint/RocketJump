@@ -32,6 +32,9 @@ public class SpawnManager : MonoBehaviour {
 	float m_Min_Dist;
     int m_spawnDistance;
 
+	[Header("Debug Values")]
+	[SerializeField]
+	bool m_EnableDebug;
 
     #region Mono
     void Awake(){
@@ -174,7 +177,9 @@ public class SpawnManager : MonoBehaviour {
 
 	void PlatformEnteredEnd(GameObject obj){
 		#if UNITY_EDITOR
-		Debug.Log("Before");
+		if (m_EnableDebug) {
+			Debug.Log("Before");
+		}
 		PrintAllLinkedList ();
 		#endif
 
@@ -184,7 +189,9 @@ public class SpawnManager : MonoBehaviour {
 
 
 		#if UNITY_EDITOR
-		Debug.Log("After");
+		if (m_EnableDebug) {
+			Debug.Log("After");
+		}
 		PrintAllLinkedList ();
 		#endif
 	}
@@ -196,9 +203,11 @@ public class SpawnManager : MonoBehaviour {
 	#if UNITY_EDITOR
 
 	void PrintAllLinkedList() {
-		PrintLinkedList (mAvailablePlatforms.First, "Available Platforms");
-		PrintLinkedList (mPlatformsInMotion.First, "Motion Platforms");
-		Debug.Log ("@@@@@@@@@@@@@@@@@@");
+		if (m_EnableDebug) {
+			PrintLinkedList (mAvailablePlatforms.First, "Available Platforms");
+			PrintLinkedList (mPlatformsInMotion.First, "Motion Platforms");
+			Debug.Log ("@@@@@@@@@@@@@@@@@@");
+		}
 	}
 
 	void PrintLinkedList(LinkedListNode<GameObject> node, string NameOfList) {
