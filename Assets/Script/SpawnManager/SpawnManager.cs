@@ -148,12 +148,12 @@ public class SpawnManager : MonoBehaviour {
 
         if (setPosition_Y < m_Min_y)
         {
-            setPosition_Y = (int)m_Min_y;
+			setPosition_Y = (int)(lastPlat + 2*m_rangeDifference);
         }
 
         if (setPosition_Y > m_Max_y)
         {
-            setPosition_Y = (int)m_Max_y;
+			setPosition_Y = (int)(lastPlat - 2*m_rangeDifference);
         }
 
 		
