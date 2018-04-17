@@ -10,8 +10,11 @@ public class Player : MonoBehaviour {
 	Rigidbody2D m_RigidBody;
 
 	[SerializeField]
-	GameObject SpawnManager; 
+	GameObject m_spawnManager; 
 	MovementManager m_moveManager;
+    [SerializeField]
+    GameObject m_loopingManager;
+    LoopingManager m_looper;
 
 	//Physics
 	[SerializeField]
@@ -26,8 +29,9 @@ public class Player : MonoBehaviour {
 	void Awake(){
 		m_RigidBody = GetComponent<Rigidbody2D>();
 		m_energy = GetComponent<Energy>();
-		m_moveManager = SpawnManager.GetComponent<MovementManager> ();
-	}
+		m_moveManager = m_spawnManager.GetComponent<MovementManager> ();
+        m_looper = m_loopingManager.GetComponent<LoopingManager>();
+    }
 
 
 	void Update() {
@@ -65,8 +69,8 @@ public class Player : MonoBehaviour {
 		}
 
 		if (otherObj.tag == m_SafeZone){
-			//Check if platform already stepped on before
-			m_moveManager.StopSpeed();
+            //Check if platform already stepped on before
+            StopMovingEnvironment();
 			IncrementPoint (otherObj);
 			
 		}
@@ -93,9 +97,22 @@ public class Player : MonoBehaviour {
 	void OnCollisionExit2D(Collision2D other) {
 		GameObject otherObj = other.gameObject;
 		if (otherObj.tag == m_SafeZone) {
-			m_moveManager.PlaySpeed ();
-		}
+            StartMovingEnvironment();
+        }
 	}
+
+    void StartMovingEnvironment()
+    {
+        m_moveManager.PlaySpeed();
+        m_looper.PlayAllObjects();
+
+    }
+
+    void StopMovingEnvironment()
+    {
+        m_moveManager.StopSpeed();
+        m_looper.StopAllObjects();
+    }
 	#endregion
 
 	#region Death
@@ -103,7 +120,9 @@ public class Player : MonoBehaviour {
 	void Death() {
 		if (StateManager.instance.CurrentState() != GameState.Game) {
 			return;
-		} 
+		}
+        //Stop Environment from moving
+        StopMovingEnvironment();
 		//Set Energy to 0
 		m_energy.NoMoreEnergy();
 		//Set State
