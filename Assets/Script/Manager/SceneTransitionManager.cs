@@ -36,12 +36,21 @@ public class SceneTransitionManager : MonoBehaviour {
 		m_ScreenCover.CrossFadeAlpha (0, m_TimeTakenToFade, true);
 		StartCoroutine ("DeactivateBlackScreen");
 	}
+		
+	public void StartFadeOutToNextScene() {
+		FadeOut ();
+		StartCoroutine ("StartChangeScene");
+	}
 
-	public void StartFadeOut() {
+	public void StartFadeOutToGame() {
+		FadeOut ();
+		StartCoroutine ("StartReplayScene");
+	}
+
+	void FadeOut() {
 		gameObject.SetActive (true);
 		m_ScreenCover_Renderer.SetAlpha (0);
 		m_ScreenCover.CrossFadeAlpha (1, m_TimeTakenToFade, true);
-		StartCoroutine ("StartChangeScene");
 	}
 
 	IEnumerator DeactivateBlackScreen() {
@@ -51,12 +60,21 @@ public class SceneTransitionManager : MonoBehaviour {
 	#endregion
 
 	#region SceneChange
-	IEnumerator StartChangeScene(){
+	IEnumerator StartReplayScene() {
 		yield return new WaitForSeconds (m_TimeTakenToFade);
-		ChangeScene ();
+		ReplayCurrentScene ();
 	}
 
-	void ChangeScene () {
+	void ReplayCurrentScene() {
+		SceneManager.LoadScene (SceneManager.GetActiveScene().name);
+	}
+
+	IEnumerator StartChangeScene(){
+		yield return new WaitForSeconds (m_TimeTakenToFade);
+		ChangeNextScene ();
+	}
+
+	void ChangeNextScene () {
 		StateManager.instance.NextState ();
 		SceneManager.LoadScene (GetNextSceneIndex ());
 	}
