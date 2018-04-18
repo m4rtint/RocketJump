@@ -79,13 +79,14 @@ public class Player : MonoBehaviour {
 	}
 
 	void IncrementPoint(GameObject obj) {
-		//Platform set as Stepped on
 		Platform plat = obj.GetComponent<Platform> ();
-		//Increment points
 		if (!plat.m_DidStepOn) {
 			ScoreManager.instance.IncrementScore ();
-			//AUDIO
-			AudioManager.instance.Point();
+			//Condition so audio doesn't play on game start
+			if (ScoreManager.instance.m_score > 0) {
+				//AUDIO
+				AudioManager.instance.Point ();
+			}
 		}
 		plat.SteppedOnPlatform ();
 
