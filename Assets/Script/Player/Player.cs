@@ -131,6 +131,8 @@ public class Player : MonoBehaviour {
 		ScoreManager.instance.SaveScore();
 		//Setup Game Over Panel
 		UIManager.instance.StartUpGameOverPanel();
+		//AUDIO
+		AudioManager.instance.Death();
 	}
 		
 

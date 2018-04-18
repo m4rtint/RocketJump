@@ -12,7 +12,6 @@ public class ScrollingObject : MonoBehaviour {
 
     //Scrolling Properties
     Rigidbody2D m_rigidBody;
-    float m_speed;
 
     // Use this for initialization
     #region Mono
@@ -38,7 +37,6 @@ public class ScrollingObject : MonoBehaviour {
 
     public void SetScrollingSpeed(float speed)
     {
-        m_speed = speed;
         m_rigidBody.velocity = new Vector2(-speed, 0);
     }
     #endregion

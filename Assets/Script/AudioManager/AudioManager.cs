@@ -18,6 +18,7 @@ public class AudioManager : MonoBehaviour {
 			Destroy(gameObject);
 
 		DontDestroyOnLoad(gameObject);
+		SetupVariable ();
 	}
 
 	void SetupVariable() {

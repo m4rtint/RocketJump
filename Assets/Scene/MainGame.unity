@@ -826,46 +826,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c26e932dfc222841b76a2aa7ab1f961, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &679285291
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 679285292}
-  - component: {fileID: 679285293}
-  m_Layer: 0
-  m_Name: DebugManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &679285292
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 679285291}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.7986969, y: 0.12702492, z: 0.08300781}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &679285293
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 679285291}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 349ab355081974c6daccf149d41a2fb8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &742796830
 GameObject:
   m_ObjectHideFlags: 0
@@ -2267,6 +2227,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114572132723842944, guid: a65ea3f8bbd014da9a08e076cf07bf38,
+        type: 2}
+      propertyPath: MenuClick
+      value: 
+      objectReference: {fileID: 8300000, guid: d64eab22d9a2a418a85b30fbb673794a, type: 3}
+    - target: {fileID: 114572132723842944, guid: a65ea3f8bbd014da9a08e076cf07bf38,
+        type: 2}
+      propertyPath: Death
+      value: 
+      objectReference: {fileID: 8300000, guid: 4bf095ca6011a4f1f972ab9d83b2168e, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a65ea3f8bbd014da9a08e076cf07bf38, type: 2}
   m_IsPrefabParent: 0

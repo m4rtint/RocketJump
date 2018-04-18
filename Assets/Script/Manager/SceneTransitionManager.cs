@@ -40,11 +40,15 @@ public class SceneTransitionManager : MonoBehaviour {
 	public void StartFadeOutToNextScene() {
 		FadeOut ();
 		StartCoroutine ("StartChangeScene");
+		//AUDIO
+		AudioManager.instance.MenuClick();
 	}
 
 	public void StartFadeOutToSameScene() {
 		FadeOut ();
 		StartCoroutine ("StartReplayScene");
+		//AUDIO
+		AudioManager.instance.MenuClick();
 	}
 
 	void FadeOut() {
