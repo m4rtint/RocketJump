@@ -32,10 +32,11 @@ public class SpawnManager : MonoBehaviour {
 	float m_Min_Dist;
     int m_spawnDistance;
 
-	[Header("Debug Values")]
+#if UNITY_EDITOR
+    [Header("Debug Values")]
 	[SerializeField]
 	bool m_EnableDebug;
-
+#endif
     #region Mono
     void Awake(){
 		Setup ();
@@ -134,31 +135,30 @@ public class SpawnManager : MonoBehaviour {
         float lastPlat = mPlatformsInMotion.Last.Value.transform.position.y;
         int setPosition_Y = 0;
 
-
+        float positionChange = 1;
         if (Random.Range(0,10) % 2 == 0)
         {
-            //Lower
-            setPosition_Y = (int)(lastPlat - m_rangeDifference);
-        } else
-        {
-            //Higher
-            setPosition_Y = (int)(lastPlat + m_rangeDifference);
+            positionChange = -1;
         }
-        
+        setPosition_Y = (int)(lastPlat + (RandomRangeDifference() * positionChange));
 
         if (setPosition_Y < m_Min_y)
         {
-			setPosition_Y = (int)(lastPlat + 2*m_rangeDifference);
-        }
-
-        if (setPosition_Y > m_Max_y)
+            setPosition_Y = (int)(m_Min_y + RandomRangeDifference());
+        }else if (setPosition_Y > m_Max_y)
         {
-			setPosition_Y = (int)(lastPlat - 2*m_rangeDifference);
+            setPosition_Y = (int)(m_Max_y - RandomRangeDifference());
         }
+        
 
 		
 		plat.transform.position = new Vector3(m_spawnAt_X, setPosition_Y, 0);
 	}
+
+    int RandomRangeDifference()
+    {
+        return (int)Random.Range(1, m_rangeDifference + 1);
+    }
 
 	void RandomizeSpawnDistance() {
 		//Spawn Distance
