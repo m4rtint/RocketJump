@@ -467,7 +467,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2141017052}
-        m_MethodName: StartFadeOut
+        m_MethodName: StartFadeOutToNextScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

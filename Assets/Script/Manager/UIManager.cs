@@ -9,7 +9,7 @@ public class UIManager : MonoBehaviour {
 	[SerializeField]
 	GameObject m_GameOverPanel;
 	[SerializeField]
-	float m_LagTimeBeforeRising;
+	float m_LagTime;
 	[SerializeField]
 	GameObject m_EnergyBar;
 	[SerializeField]
@@ -40,7 +40,7 @@ public class UIManager : MonoBehaviour {
 	}
 
 	IEnumerator GameOverWithLag(){
-		yield return new WaitForSeconds(m_LagTimeBeforeRising);
+		yield return new WaitForSeconds(m_LagTime);
 		m_GameOverPanel.GetComponent<Animator> ().SetTrigger ("GameOver");
 	}
 	#endregion

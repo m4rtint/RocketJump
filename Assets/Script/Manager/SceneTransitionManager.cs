@@ -42,7 +42,7 @@ public class SceneTransitionManager : MonoBehaviour {
 		StartCoroutine ("StartChangeScene");
 	}
 
-	public void StartFadeOutToGame() {
+	public void StartFadeOutToSameScene() {
 		FadeOut ();
 		StartCoroutine ("StartReplayScene");
 	}
@@ -66,6 +66,7 @@ public class SceneTransitionManager : MonoBehaviour {
 	}
 
 	void ReplayCurrentScene() {
+        StateManager.instance.SetState(GameState.Game);
 		SceneManager.LoadScene (SceneManager.GetActiveScene().name);
 	}
 
