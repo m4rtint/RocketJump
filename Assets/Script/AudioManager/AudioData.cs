@@ -8,4 +8,5 @@ public class AudioData : MonoBehaviour {
 	public AudioClip MenuClick;
 	public AudioClip Flap;
 	public AudioClip Death;
+	public AudioClip Point;
 }

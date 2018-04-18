@@ -47,11 +47,17 @@ public class AudioManager : MonoBehaviour {
 	}
 
 	public void Flap(){
-		PLAY (AUDIO.Flap);
+		if (!m_audioSource.isPlaying) {
+			PLAY (AUDIO.Flap);
+		}
 	}
 
 	public void Death() {
 		PLAY (AUDIO.Death);
+	}
+
+	public void Point() {
+		PLAY (AUDIO.Point);
 	}
 	#endregion
 }

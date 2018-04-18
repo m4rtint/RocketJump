@@ -2237,6 +2237,11 @@ Prefab:
       propertyPath: Death
       value: 
       objectReference: {fileID: 8300000, guid: 4bf095ca6011a4f1f972ab9d83b2168e, type: 3}
+    - target: {fileID: 114572132723842944, guid: a65ea3f8bbd014da9a08e076cf07bf38,
+        type: 2}
+      propertyPath: Flap
+      value: 
+      objectReference: {fileID: 8300000, guid: 2eb6b3b2c58394e468f6f517cbdfd4a3, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a65ea3f8bbd014da9a08e076cf07bf38, type: 2}
   m_IsPrefabParent: 0

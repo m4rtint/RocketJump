@@ -44,6 +44,8 @@ public class Player : MonoBehaviour {
 		if(PlayerMovementAllowed()){
 			Rocket ();
 			m_energy.DecrementEnergy();
+			//AUDIO
+			AudioManager.instance.Flap();
 		}
 	}
 
@@ -82,6 +84,8 @@ public class Player : MonoBehaviour {
 		//Increment points
 		if (!plat.m_DidStepOn) {
 			ScoreManager.instance.IncrementScore ();
+			//AUDIO
+			AudioManager.instance.Point();
 		}
 		plat.SteppedOnPlatform ();
 
