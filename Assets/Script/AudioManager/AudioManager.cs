@@ -7,11 +7,11 @@ public class AudioManager : MonoBehaviour {
 	
 	public static AudioManager instance = null;
 
-	AudioSource m_audioSource;
+	AudioSource[] m_audioSources;
 	AudioData AUDIO;
 
-	#region Mono
-	void Awake() {
+    #region Mono
+    void Awake() {
 		if (instance == null)
 			instance = this;
 		else if (instance != this)
@@ -22,42 +22,40 @@ public class AudioManager : MonoBehaviour {
 	}
 
 	void SetupVariable() {
-		m_audioSource = GetComponent<AudioSource> ();
-		m_audioSource.playOnAwake = false;
-		AUDIO = GetComponent<AudioData> ();
+		m_audioSources = GetComponents<AudioSource> ();
+        AUDIO = GetComponent<AudioData> ();
 	}
 	#endregion
 
 	#region Controls
-	void PLAY(AudioClip clip, float volume = 1.0f) {
-		m_audioSource.PlayOneShot (clip, volume);
+	void PLAY(AudioClip clip, int source, float volume = 1.0f) {
+		m_audioSources[source].PlayOneShot (clip, volume);
 	}
 
 	public void STOP(){
-		if (m_audioSource.isPlaying) {
-			m_audioSource.Stop ();
-		}
-	}
+        m_audioSources[0].Stop ();
+        m_audioSources[1].Stop();
+    }
 	#endregion
 
 	#region Public
 	//Place Different Sound effects here
 	public void MenuClick() {
-		PLAY (AUDIO.MenuClick);
+		PLAY (AUDIO.MenuClick, 0);
 	}
 
 	public void Flap(){
-		if (!m_audioSource.isPlaying) {
-			PLAY (AUDIO.Flap);
+		if (!m_audioSources[0].isPlaying) {
+			PLAY (AUDIO.Flap, 0);
 		}
 	}
 
 	public void Death() {
-		PLAY (AUDIO.Death);
+		PLAY (AUDIO.Death,0);
 	}
 
 	public void Point() {
-		PLAY (AUDIO.Point);
+		PLAY (AUDIO.Point,1);
 	}
 	#endregion
 }
