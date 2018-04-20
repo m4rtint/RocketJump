@@ -554,7 +554,7 @@ GameObject:
   - component: {fileID: 268048028}
   - component: {fileID: 268048027}
   m_Layer: 5
-  m_Name: Score
+  m_Name: GameOverScore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1105,6 +1105,7 @@ GameObject:
   - component: {fileID: 1045194910}
   - component: {fileID: 1045194909}
   - component: {fileID: 1045194907}
+  - component: {fileID: 1045194908}
   m_Layer: 5
   m_Name: GameOverPanel
   m_TagString: Untagged
@@ -1151,6 +1152,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &1045194908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1045194905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c3e03ce023964a5eb44b5204477df40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_gameOverScore: {fileID: 268048025}
+  m_medalImage: {fileID: 1484609717}
 --- !u!114 &1045194909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1637,8 +1651,9 @@ GameObject:
   - component: {fileID: 1484609718}
   - component: {fileID: 1484609720}
   - component: {fileID: 1484609719}
+  - component: {fileID: 1484609721}
   m_Layer: 5
-  m_Name: Base
+  m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1695,6 +1710,22 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1484609717}
+--- !u!114 &1484609721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1484609717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 865c792e7c60344d688acf8cf66e1dc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_medals:
+  - {fileID: 21300000, guid: a7f3bbd8300e543ddb13d13c67b0b5cf, type: 3}
+  - {fileID: 21300000, guid: 0e944758032c54493a346469b2a12317, type: 3}
+  - {fileID: 21300000, guid: 4d0e608c4c2f845939486153e2a6cd81, type: 3}
+  debugScore: -1
 --- !u!1 &1539652779
 GameObject:
   m_ObjectHideFlags: 0

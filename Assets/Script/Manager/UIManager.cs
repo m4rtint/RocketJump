@@ -22,6 +22,8 @@ public class UIManager : MonoBehaviour {
 	Vector3 m_energyScale = Vector3.one;
 	public static UIManager instance = null;
 
+
+
 	#region Mono
 	void Awake() {
 		instance = this;
@@ -43,6 +45,13 @@ public class UIManager : MonoBehaviour {
 		yield return new WaitForSeconds(m_LagTime);
 		m_GameOverPanel.GetComponent<Animator> ().SetTrigger ("GameOver");
 	}
+
+	public void UpdateGameOverPanel() {
+		m_GameOverPanel.GetComponent<GameOverPanelManager>().UpdateGameOverScore();
+		m_GameOverPanel.GetComponent<GameOverPanelManager>().SetMedal();
+	}
+
+		
 	#endregion
 
 	#region Energy UI
