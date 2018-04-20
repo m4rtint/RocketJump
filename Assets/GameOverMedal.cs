@@ -30,8 +30,9 @@ public class GameOverMedal : MonoBehaviour {
 		}
 
 		#if UNITY_EDITOR
-		if (score > -1) {
-			GetComponent<Image> ().sprite = m_medals[score];
+		if (debugScore > -1) {
+            GetComponent<Image>().color = Color.white;
+            GetComponent<Image> ().sprite = m_medals[debugScore];
 		}
 		#endif
 	}
