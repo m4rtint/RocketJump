@@ -37,19 +37,23 @@ public class SceneTransitionManager : MonoBehaviour {
 		StartCoroutine ("DeactivateBlackScreen");
 	}
 		
-	public void StartFadeOutToNextScene() {
-		FadeOut ();
-		StartCoroutine ("StartChangeScene");
-		//AUDIO
-		AudioManager.instance.MenuClick();
+	public void StartFadeOutToMenu() {
+        StateManager.instance.SetState(GameState.Menu);
+        StartFadeOutProcessWithCoroutine();
 	}
 
-	public void StartFadeOutToSameScene() {
-		FadeOut ();
-		StartCoroutine ("StartReplayScene");
-		//AUDIO
-		AudioManager.instance.MenuClick();
+	public void StartFadeOutToGame() {
+        StateManager.instance.SetState(GameState.Game);
+        StartFadeOutProcessWithCoroutine();
 	}
+
+    void StartFadeOutProcessWithCoroutine()
+    {
+        FadeOut();
+        StartCoroutine("StartChangeScene");
+        //AUDIO
+        AudioManager.instance.MenuClick();
+    }
 
 	void FadeOut() {
 		gameObject.SetActive (true);
@@ -64,39 +68,9 @@ public class SceneTransitionManager : MonoBehaviour {
 	#endregion
 
 	#region SceneChange
-	IEnumerator StartReplayScene() {
+	IEnumerator StartChangeScene() {
 		yield return new WaitForSeconds (m_TimeTakenToFade);
-		ReplayCurrentScene ();
-	}
-
-	void ReplayCurrentScene() {
-        StateManager.instance.SetState(GameState.Game);
-		SceneManager.LoadScene (SceneManager.GetActiveScene().name);
-	}
-
-	IEnumerator StartChangeScene(){
-		yield return new WaitForSeconds (m_TimeTakenToFade);
-		ChangeNextScene ();
-	}
-
-	void ChangeNextScene () {
-		StateManager.instance.NextState ();
-		SceneManager.LoadScene (GetNextSceneIndex ());
-	}
-
-	int GetNextSceneIndex() {
-		int numberOfScenes = SceneManager.sceneCountInBuildSettings;
-		int currentScene = SceneManager.GetActiveScene ().buildIndex;
-		currentScene++;
-
-		//Reset back to scene 0
-		if (currentScene >= numberOfScenes) {
-			currentScene = 0;
-		}
-
-		return currentScene;
-
-	}
-
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 	#endregion
 }

@@ -11,9 +11,7 @@ public enum GameState {
 public class StateManager : MonoBehaviour {
 
 	public static StateManager instance = null;
-
-	[SerializeField]
-	GameState m_CurrentState;
+	public GameState m_CurrentState;
 
 	void Awake() {
 		//Check if instance already exists
@@ -30,7 +28,9 @@ public class StateManager : MonoBehaviour {
 
 		//Sets this to not be destroyed when reloading scene
 		DontDestroyOnLoad(gameObject);
-	}
+        m_CurrentState = GameState.Menu;
+
+    }
 
 	public void NextState() {
 		switch (m_CurrentState) {

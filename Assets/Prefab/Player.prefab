@@ -113,9 +113,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5524a8eec1e9f4f019d35f1b2ab07665, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnManager: {fileID: 0}
+  m_spawnManager: {fileID: 1081065889832100, guid: db0a25e9b137165458e5b16712578464,
+    type: 2}
+  m_loopingManager: {fileID: 1920603049122722, guid: 1298d3b0664997143b76064c0e0cf316,
+    type: 2}
   upForce: 200
-  TimeTilReset: 1
 --- !u!212 &212991007209075254
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -148,7 +150,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1593018705
-  m_SortingLayer: 1
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a7f3bbd8300e543ddb13d13c67b0b5cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
