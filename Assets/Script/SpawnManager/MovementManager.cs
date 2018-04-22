@@ -8,7 +8,7 @@ public class MovementManager : MonoBehaviour {
 
 	[SerializeField]
 	float m_speed;
-	float m_speedChanges;
+    internal bool m_speedChanges;
 
 	[SerializeField]
 	GameObject m_endSpawnGameObject;
@@ -23,8 +23,9 @@ public class MovementManager : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (StateManager.instance.EqualGame()) {
+		if (StateManager.instance.EqualGame() && m_speedChanges) {
 			MoveObjectAtRate (m_platforms, m_speed);
+            Debug.Log("Moving");
 		}
 	}
 	#endregion
@@ -42,16 +43,16 @@ public class MovementManager : MonoBehaviour {
 		foreach(GameObject obj in objects) {
 			Vector3 current = obj.transform.position;
 			Vector3 destination = new Vector3(m_endSpawn_X, obj.transform.position.y,0);
-			obj.transform.position = Vector3.MoveTowards (current, destination, Time.deltaTime * speed * m_speedChanges);
+			obj.transform.position = Vector3.MoveTowards (current, destination, Time.deltaTime * speed);
 		}
 	}	
 
 	public void StopSpeed() {
-		m_speedChanges = 0;
+		m_speedChanges = false;
 	}
 
 	public void PlaySpeed() {
-		m_speedChanges = 1;
+		m_speedChanges = true;
 	}
 	#endregion
 

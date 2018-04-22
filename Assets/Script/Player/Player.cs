@@ -128,10 +128,11 @@ public class Player : MonoBehaviour {
 		}
         //Stop Environment from moving
         StopMovingEnvironment();
-		//Set Energy to 0
-		m_energy.NoMoreEnergy();
-		//Set State
-		StateManager.instance.NextState();
+        m_moveManager.enabled = false;
+        //Set Energy to 0
+        m_energy.NoMoreEnergy();
+        //Set State
+        StateManager.instance.NextState();
 		//Save Score
 		ScoreManager.instance.SaveScore();
 		//Setup Game Over Panel
