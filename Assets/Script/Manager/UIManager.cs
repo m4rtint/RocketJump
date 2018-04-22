@@ -44,7 +44,7 @@ public class UIManager : MonoBehaviour {
 
     void InitializeUI()
     {
-        bool isMenu = StateManager.instance.CurrentState() == GameState.Menu;
+		bool isMenu = StateManager.instance.EqualMenu();
         m_MenuUI.SetActive(isMenu);
         m_GameUI.SetActive(!isMenu);
     }

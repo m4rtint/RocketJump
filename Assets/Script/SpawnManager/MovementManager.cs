@@ -23,7 +23,7 @@ public class MovementManager : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (StateManager.instance.CurrentState() == GameState.Game) {
+		if (StateManager.instance.EqualGame()) {
 			MoveObjectAtRate (m_platforms, m_speed);
 		}
 	}
@@ -34,7 +34,7 @@ public class MovementManager : MonoBehaviour {
 		GameObject[] platArray = GameObject.FindGameObjectsWithTag ("PlatformBody");
 		m_platforms.AddRange(platArray);
 		m_endSpawn_X = m_endSpawnGameObject.transform.position.x;
-		m_speedChanges = 1;
+		StopSpeed ();
 	}
 
 	#region Movement

@@ -58,7 +58,7 @@ public class Energy : MonoBehaviour {
 
 	public void RefillEnergy(){
 		//Change this to checking the state
-		if (StateManager.instance.CurrentState() != GameState.Game) {return;}
+		if (!StateManager.instance.EqualGame()) {return;}
 
 		float CalculatedEnergy = m_energy + m_rate * 2;
 		if (CalculatedEnergy < m_maxEnergy ){

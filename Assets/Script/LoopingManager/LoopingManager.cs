@@ -35,7 +35,7 @@ public class LoopingManager : MonoBehaviour {
 
     public void PlayAllObjects()
     {
-        if (StateManager.instance.CurrentState() == GameState.Game)
+		if (StateManager.instance.EqualGame())
         {
             SetSpeedOfObjects(m_floors, m_floorSpeed);
             SetSpeedOfObjects(m_background, m_backgroundSpeed);

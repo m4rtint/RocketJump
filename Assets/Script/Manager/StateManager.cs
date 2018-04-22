@@ -11,7 +11,7 @@ public enum GameState {
 public class StateManager : MonoBehaviour {
 
 	public static StateManager instance = null;
-	public GameState m_CurrentState;
+	GameState m_CurrentState;
 
 	void Awake() {
 		//Check if instance already exists
@@ -46,15 +46,19 @@ public class StateManager : MonoBehaviour {
 		}
 	}
 
-	public GameState CurrentState() {
-		return m_CurrentState;
-	}
-
-	public int CurrentStateInteger() {
-		return (int)m_CurrentState;
-	}
-
 	public void SetState(GameState state) {
 		m_CurrentState = state;
+	}
+
+	public bool EqualGame(){
+		return m_CurrentState == GameState.Game;
+	}
+
+	public bool EqualGameOver(){
+		return m_CurrentState == GameState.GameOver;
+	}
+
+	public bool EqualMenu(){
+		return m_CurrentState == GameState.Menu;
 	}
 }

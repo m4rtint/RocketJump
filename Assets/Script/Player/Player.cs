@@ -54,7 +54,7 @@ public class Player : MonoBehaviour {
 	}
 
 	bool PlayerMovementAllowed() {
-		return DidInput () && m_energy.IsEnoughEnergy () && StateManager.instance.CurrentState() == GameState.Game;
+		return DidInput () && m_energy.IsEnoughEnergy () && StateManager.instance.EqualGame();
 	}
 
 	void Rocket() {
@@ -123,7 +123,7 @@ public class Player : MonoBehaviour {
 	#region Death
 
 	void Death() {
-		if (StateManager.instance.CurrentState() != GameState.Game) {
+		if (!StateManager.instance.EqualGame()) {
 			return;
 		}
         //Stop Environment from moving
