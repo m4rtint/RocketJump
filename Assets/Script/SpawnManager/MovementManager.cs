@@ -25,7 +25,6 @@ public class MovementManager : MonoBehaviour {
 	void Update () {
 		if (StateManager.instance.EqualGame() && m_speedChanges) {
 			MoveObjectAtRate (m_platforms, m_speed);
-            Debug.Log("Moving");
 		}
 	}
 	#endregion
