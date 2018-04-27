@@ -27,8 +27,6 @@ public class MovementManager : MonoBehaviour {
 			MoveObjectAtRate (m_platforms, m_speed);
 		}
 	}
-	#endregion
-
 
 	void Setup() {
 		GameObject[] platArray = GameObject.FindGameObjectsWithTag ("PlatformBody");
@@ -36,9 +34,10 @@ public class MovementManager : MonoBehaviour {
 		m_endSpawn_X = m_endSpawnGameObject.transform.position.x;
 		StopSpeed ();
 	}
+    #endregion
 
-	#region Movement
-	void MoveObjectAtRate(List<GameObject> objects, float speed) {
+    #region Movement
+    void MoveObjectAtRate(List<GameObject> objects, float speed) {
 		foreach(GameObject obj in objects) {
 			Vector3 current = obj.transform.position;
 			Vector3 destination = new Vector3(m_endSpawn_X, obj.transform.position.y,0);
