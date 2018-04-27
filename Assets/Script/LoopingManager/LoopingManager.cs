@@ -9,28 +9,45 @@ public class LoopingManager : MonoBehaviour {
     [SerializeField]
     float m_floorSpeed;
 
-    [Header("background Properties")]
+    [Header("cloud Properties")]
     [SerializeField]
-    GameObject[] m_background;
+    GameObject[] m_cloud;
     [SerializeField]
-    float m_backgroundSpeed;
+    float m_cloudSpeed;
+
+    [Header("bushes Properties")]
+    [SerializeField]
+    GameObject[] m_bushes;
+    [SerializeField]
+    float m_bushesSpeed;
+
+    [Header("mountain Properties")]
+    [SerializeField]
+    GameObject[] m_mountain;
+    [SerializeField]
+    float m_mountainSpeed;
 
 
     #region mono
     // Use this for initialization
     void Start () {
         SetSpeedOfObjects(m_floors, m_floorSpeed);
-        SetSpeedOfObjects(m_background, m_backgroundSpeed);
+        SetSpeedOfObjects(m_cloud, m_cloudSpeed);
+        SetSpeedOfObjects(m_bushes, m_bushesSpeed);
+        SetSpeedOfObjects(m_mountain, m_mountainSpeed);
+
     }
 
-#endregion
+    #endregion
 
 
     #region motion
     public void StopAllObjects()
     {
         SetSpeedOfObjects(m_floors,0);
-        SetSpeedOfObjects(m_background, 0);
+        SetSpeedOfObjects(m_cloud, 0);
+        SetSpeedOfObjects(m_bushes, 0);
+        SetSpeedOfObjects(m_mountain, 0);
     }
 
     public void PlayAllObjects()
@@ -38,7 +55,9 @@ public class LoopingManager : MonoBehaviour {
 		if (StateManager.instance.EqualGame())
         {
             SetSpeedOfObjects(m_floors, m_floorSpeed);
-            SetSpeedOfObjects(m_background, m_backgroundSpeed);
+            SetSpeedOfObjects(m_cloud, m_cloudSpeed);
+            SetSpeedOfObjects(m_bushes, m_bushesSpeed);
+            SetSpeedOfObjects(m_mountain, m_mountainSpeed);
         }
     }
 
