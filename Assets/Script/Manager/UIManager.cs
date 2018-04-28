@@ -65,17 +65,8 @@ public class UIManager : MonoBehaviour {
 
 	#region Gameover Screen
 	public void StartUpGameOverPanel() {
-		StartCoroutine ("GameOverWithLag");
-	}
-
-	IEnumerator GameOverWithLag(){
-		yield return new WaitForSeconds(m_LagTime);
-		m_GameOverPanel.GetComponent<Animator> ().SetTrigger ("GameOver");
-	}
-
-	public void UpdateGameOverPanel() {
-		m_GameOverPanel.GetComponent<GameOverPanelManager>().UpdateGameOverScore();
-		m_GameOverPanel.GetComponent<GameOverPanelManager>().SetMedal();
+        m_GameOverPanel.SetActive(true);
+        m_GameUI.SetActive(false);
 	}
     #endregion
 
