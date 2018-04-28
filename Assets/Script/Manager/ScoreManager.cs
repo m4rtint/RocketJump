@@ -14,7 +14,7 @@ public class ScoreManager : MonoBehaviour {
 
 	public void IncrementScore(){
 		m_score++;
-		UIManager.instance.UpdateScore (m_score);
+		UIManager.instance.UpdateGameScore (m_score);
 	}
 
 	public void SaveScore() {
@@ -26,5 +26,5 @@ public class ScoreManager : MonoBehaviour {
 	public int HighScore() {
 		return PlayerPrefs.GetInt ("HighScore");
 	}
-		
+
 }

@@ -51,13 +51,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0ae9271e945b4197bac87dbdb4bf4d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_GameOverPanel: {fileID: 1609698315351630, guid: 3339a18f7973c80408c576d58309dd22,
-    type: 2}
+  m_GameOverPanel: {fileID: 0}
   m_LagTime: 0.5
-  m_EnergyBar: {fileID: 1225455037161240, guid: a2a39501578acd946b304a5f6323fd88,
-    type: 2}
-  m_Score: {fileID: 1802317946536582, guid: a2a39501578acd946b304a5f6323fd88, type: 2}
-  m_MenuUI: {fileID: 1935956539819664, guid: c8df8b4d19aee7c40bc0681f4368f3ea, type: 2}
-  m_GameUI: {fileID: 1841410851548750, guid: a2a39501578acd946b304a5f6323fd88, type: 2}
-  m_PlayerObject: {fileID: 1927724969688590, guid: 2bad48bb40c924dfbb0d5f77d17b743b,
-    type: 2}
+  m_EnergyBar: {fileID: 0}
+  m_GameScore: {fileID: 0}
+  m_MenuScore: {fileID: 0}
+  m_MenuUI: {fileID: 0}
+  m_GameUI: {fileID: 0}
+  m_PlayerObject: {fileID: 0}

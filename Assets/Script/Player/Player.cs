@@ -10,7 +10,7 @@ public class Player : MonoBehaviour {
 	Rigidbody2D m_RigidBody;
 
 	[SerializeField]
-	GameObject m_spawnManager; 
+	GameObject m_spawnManager;
 	MovementManager m_moveManager;
     [SerializeField]
     GameObject m_loopingManager;
@@ -41,11 +41,16 @@ public class Player : MonoBehaviour {
 	#endregion
 	#region Movement
 	void Movement() {
-		if(PlayerMovementAllowed()){
-			Rocket ();
-			m_energy.DecrementEnergy();
-			//AUDIO
-			AudioManager.instance.Flap();
+		if (DidInput()) {
+			if (StateManager.instance.EqualMenu()) {
+				UIManager.instance.TransitionFromMenuToGame();
+			}
+			else if(PlayerMovementAllowed()){
+				Rocket ();
+				m_energy.DecrementEnergy();
+				//AUDIO
+				AudioManager.instance.Flap();
+			}
 		}
 	}
 
@@ -54,7 +59,7 @@ public class Player : MonoBehaviour {
 	}
 
 	bool PlayerMovementAllowed() {
-		return DidInput () && m_energy.IsEnoughEnergy () && StateManager.instance.EqualGame();
+		return m_energy.IsEnoughEnergy () && StateManager.instance.EqualGame();
 	}
 
 	void Rocket() {
@@ -74,7 +79,7 @@ public class Player : MonoBehaviour {
             //Check if platform already stepped on before
             StopMovingEnvironment();
 			IncrementPoint (otherObj);
-			
+
 		}
 	}
 
@@ -147,7 +152,7 @@ public class Player : MonoBehaviour {
 		//Setup Game Over Panel
 		UIManager.instance.StartUpGameOverPanel();
 	}
-		
+
 
 	#endregion
 }

@@ -1,20 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour {
 
-	[Header("Canvas Items")]
+	[Header("GameOver")]
 	[SerializeField]
 	GameObject m_GameOverPanel;
 	[SerializeField]
 	float m_LagTime;
+
     [Header("Game UI")]
 	[SerializeField]
 	GameObject m_EnergyBar;
 	[SerializeField]
-	GameObject m_Score;
+	GameObject m_GameScore;
+
+	[Header("Menu UI")]
+	[SerializeField]
+	GameObject m_MenuScore;
 
     [Header("Canvas Categories")]
     [SerializeField]
@@ -29,7 +34,7 @@ public class UIManager : MonoBehaviour {
 	Vector3 m_energyScale = Vector3.one;
 	public static UIManager instance = null;
 
-   
+
 
 
 
@@ -39,7 +44,7 @@ public class UIManager : MonoBehaviour {
 		m_energy = m_PlayerObject.GetComponent<Energy> ();
 		InitializeDelegate ();
         InitializeUI();
-
+		InitializeMenuScore();
     }
 
     void InitializeUI()
@@ -51,6 +56,10 @@ public class UIManager : MonoBehaviour {
 
 	void InitializeDelegate() {
 		m_energy.onEnergyUpdate += UpdateEnergy;
+	}
+
+	void InitializeMenuScore(){
+		m_MenuScore.GetComponent<Text>().text = "Best Score: "+ScoreManager.instance.HighScore();
 	}
 	#endregion
 
@@ -87,11 +96,11 @@ public class UIManager : MonoBehaviour {
 	#endregion
 
 	#region Score UI
-	public void UpdateScore(float score) {
-		m_Score.GetComponent<TextMeshProUGUI> ().text = score.ToString();
+	public void UpdateGameScore(float score) {
+		m_GameScore.GetComponent<Text> ().text = score.ToString();
 	}
 
 	#endregion
-		
+
 
 }
