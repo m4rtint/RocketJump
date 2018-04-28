@@ -25,6 +25,16 @@ public class GameOverPanelManager : MonoBehaviour {
     GameObject[] m_GameObjectsWithImage;
     GameObject[] m_GameObjectsWithText;
 
+
+    [Header("Buttons")]
+    [SerializeField]
+    GameObject m_Menu;
+    [SerializeField]
+    GameObject m_Replay;
+    [SerializeField]
+    GameObject m_Rate;
+
+
 #region Mono
 	void Awake() {
 		SetupComponents();
@@ -66,8 +76,8 @@ public class GameOverPanelManager : MonoBehaviour {
 
 
     IEnumerator StartButtonAnimation() {
-        yield return new WaitForSeconds(m_TimeTakenForButtonsToComeIn);
-        //TODO Animate buttons - m_TimeTakenForButtonsToComeIn
+        yield return new WaitForSeconds(m_TimeTakenForButtonsToComeIn/2);
+        StartCoroutine("StartButtonPopOut");
     }
 #endregion
 
@@ -84,10 +94,22 @@ public class GameOverPanelManager : MonoBehaviour {
         }
     }
 
+    #endregion
+
+    #region Button
+    IEnumerator StartButtonPopOut() {
+        string PopOutTrigger = "ShowHome";
+        float lagTime = 0.2f;
+        m_Menu.GetComponent<Animator>().SetTrigger(PopOutTrigger);
+        yield return new WaitForSeconds(lagTime);
+        m_Replay.GetComponent<Animator>().SetTrigger(PopOutTrigger);
+        yield return new WaitForSeconds(lagTime);
+        m_Rate.GetComponent<Animator>().SetTrigger(PopOutTrigger);
+    }
 #endregion
 
-#region SetUI
-	void SetMedal() {
+    #region SetUI
+    void SetMedal() {
 		m_medalImage.GetComponent<GameOverMedal> ().SetImageFromArrayWith(ScoreManager.instance.m_score);
 	}
 
