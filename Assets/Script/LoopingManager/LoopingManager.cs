@@ -45,7 +45,7 @@ public class LoopingManager : MonoBehaviour {
     public void StopAllObjects()
     {
         SetSpeedOfObjects(m_floors,0);
-        SetSpeedOfObjects(m_cloud, 0);
+        //SetSpeedOfObjects(m_cloud, 0);
         SetSpeedOfObjects(m_bushes, 0);
         SetSpeedOfObjects(m_mountain, 0);
     }
