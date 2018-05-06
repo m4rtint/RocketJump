@@ -43,8 +43,11 @@ public class UIManager : MonoBehaviour {
 		instance = this;
 		m_energy = m_PlayerObject.GetComponent<Energy> ();
 		InitializeDelegate ();
+    }
+
+    void Start() {
         InitializeUI();
-		InitializeMenuScore();
+        InitializeMenuScore();
     }
 
     void InitializeUI()
