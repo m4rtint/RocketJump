@@ -848,7 +848,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &658261281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1201,6 +1201,10 @@ Prefab:
       value: 'BIRDY
 
         HOP'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1765088814769118, guid: c8df8b4d19aee7c40bc0681f4368f3ea, type: 2}
+      propertyPath: m_Name
+      value: MenuScore
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c8df8b4d19aee7c40bc0681f4368f3ea, type: 2}
