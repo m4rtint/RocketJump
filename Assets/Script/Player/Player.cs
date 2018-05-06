@@ -41,17 +41,13 @@ public class Player : MonoBehaviour {
 	#endregion
 	#region Movement
 	void Movement() {
-		if (DidInput()) {
-			if (StateManager.instance.EqualMenu()) {
-				UIManager.instance.TransitionFromMenuToGame();
-			}
-			else if(PlayerMovementAllowed()){
+				//UIManager.instance.TransitionFromMenuToGame();
+        if(DidInput() && PlayerMovementAllowed()){
 				Rocket ();
 				m_energy.DecrementEnergy();
 				//AUDIO
 				AudioManager.instance.Flap();
-			}
-		}
+        }
 	}
 
 	bool DidInput() {
