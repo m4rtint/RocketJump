@@ -38,19 +38,17 @@ public class SceneTransitionManager : MonoBehaviour {
 	}
 		
 	public void StartFadeOutToMenu() {
-        StateManager.instance.SetState(GameState.Menu);
-        StartFadeOutProcessWithCoroutine();
+        StartFadeOut();
+        StartCoroutine("StartChangeSceneToMenu");
 	}
 
 	public void StartFadeOutToGame() {
-        StateManager.instance.SetState(GameState.Game);
-        StartFadeOutProcessWithCoroutine();
+        StartFadeOut();
+        StartCoroutine("StartChangeSceneToGame");
 	}
 
-    void StartFadeOutProcessWithCoroutine()
-    {
+    void StartFadeOut(){
         FadeOut();
-        StartCoroutine("StartChangeScene");
         //AUDIO
         AudioManager.instance.MenuClick();
     }
@@ -68,8 +66,16 @@ public class SceneTransitionManager : MonoBehaviour {
 	#endregion
 
 	#region SceneChange
-	IEnumerator StartChangeScene() {
+	IEnumerator StartChangeSceneToMenu() {
 		yield return new WaitForSeconds (m_TimeTakenToFade);
+        StateManager.instance.SetState(GameState.Menu);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    IEnumerator StartChangeSceneToGame()
+    {
+        yield return new WaitForSeconds(m_TimeTakenToFade);
+        StateManager.instance.SetState(GameState.Game);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 	#endregion
