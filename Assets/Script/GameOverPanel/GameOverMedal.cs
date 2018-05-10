@@ -6,10 +6,10 @@ using UnityEngine.UI;
 public class GameOverMedal : MonoBehaviour {
 
 	[SerializeField]
-	Sprite[] m_medals;
-
+	Sprite[] m_medals;  
+    
 	void Awake() {
-		GetComponent<Image> ().color = Color.clear;
+		//GetComponent<Image> ().color = Color.white;
 	}
 
 	#if UNITY_EDITOR
@@ -27,6 +27,8 @@ public class GameOverMedal : MonoBehaviour {
 				medal = m_medals[1];
 			}
 			GetComponent<Image> ().sprite = medal;
+		} else {
+			GetComponent<Image>().color = Color.clear;
 		}
 
 		#if UNITY_EDITOR

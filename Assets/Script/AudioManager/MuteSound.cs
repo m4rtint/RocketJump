@@ -29,6 +29,9 @@ public class MuteSound : MonoBehaviour {
 		bool mute = AudioManager.instance.IsMuted ();
 		AudioManager.instance.MUTE(!mute);
 		UpdateButtonImage ();
+
+		//AUDIO
+		AudioManager.instance.MenuClick();
 	}
 	#endregion
 }
