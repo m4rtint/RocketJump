@@ -99,11 +99,10 @@ public class GameOverPanelManager : MonoBehaviour {
     #region Button
     IEnumerator StartButtonPopOut() {
         string PopOutTrigger = "ShowHome";
-        float lagTime = 0.2f;
+        float lagTime = 0.1f;
+		m_Replay.GetComponent<Animator>().SetTrigger(PopOutTrigger);
+		yield return new WaitForSeconds(lagTime);
         m_Menu.GetComponent<Animator>().SetTrigger(PopOutTrigger);
-        yield return new WaitForSeconds(lagTime);
-        m_Replay.GetComponent<Animator>().SetTrigger(PopOutTrigger);
-        yield return new WaitForSeconds(lagTime);
         m_Rate.GetComponent<Animator>().SetTrigger(PopOutTrigger);
     }
 #endregion
