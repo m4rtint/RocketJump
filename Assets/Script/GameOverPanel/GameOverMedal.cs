@@ -8,10 +8,6 @@ public class GameOverMedal : MonoBehaviour {
 	[SerializeField]
 	Sprite[] m_medals;  
     
-	void Awake() {
-		//GetComponent<Image> ().color = Color.white;
-	}
-
 	#if UNITY_EDITOR
 	[Range(-1,2)]
 	public int debugScore;
