@@ -25,29 +25,59 @@ public class Player : MonoBehaviour {
 	string m_DeathTag = "Death";
 	string m_SafeZone = "SafeZone";
 
+    //Animation
+    Animator m_Animator;
+    string m_FlyingParam = "Flying";
+    string m_DeathParam = "Death";
+
 	#region Mono
 	void Awake(){
 		m_RigidBody = GetComponent<Rigidbody2D>();
 		m_energy = GetComponent<Energy>();
 		m_moveManager = m_spawnManager.GetComponent<MovementManager> ();
         m_looper = m_loopingManager.GetComponent<LoopingManager>();
+        m_Animator = GetComponent<Animator>();
     }
 
 
 	void Update() {
 		Movement();
+        DoAnimation();
 	}
 
-	#endregion
-	#region Movement
-	void Movement() {
-				//UIManager.instance.TransitionFromMenuToGame();
+    #endregion
+
+    #region Animation
+    void DoAnimation()
+    {
+        if (DidInput() && PlayerMovementAllowed())
+        {
+            //Animation
+            m_Animator.SetBool(m_FlyingParam, true);
+        }
+        else
+        {
+            if (m_Animator.GetBool(m_FlyingParam))
+            {
+                m_Animator.SetBool(m_FlyingParam, false);
+            }
+        }
+    }
+
+    void DeathAnimation()
+    {
+        m_Animator.SetTrigger(m_DeathParam);
+    }
+    #endregion
+
+    #region Movement
+    void Movement() {
         if(DidInput() && PlayerMovementAllowed()){
 				Rocket ();
 				m_energy.DecrementEnergy();
 				//AUDIO
 				AudioManager.instance.Flap();
-        }
+        } 
 	}
 
 	bool DidInput() {
@@ -140,7 +170,10 @@ public class Player : MonoBehaviour {
         UIManager.instance.StartUpGameOverPanel();
 		//AUDIO
 		AudioManager.instance.Death();
-	}
+        //ANIMATION
+        DeathAnimation();
+
+    }
 
 
 	#endregion
