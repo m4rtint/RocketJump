@@ -1929,6 +1929,11 @@ Prefab:
       propertyPath: EASTER_Point
       value: 
       objectReference: {fileID: 8300000, guid: a6a7e5f1d35cc3248a1f7c7ec964edeb, type: 3}
+    - target: {fileID: 114048838943159114, guid: 07df1104cf70134448e2d3c3e375b8df,
+        type: 2}
+      propertyPath: EasterEgg
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 07df1104cf70134448e2d3c3e375b8df, type: 2}
   m_IsPrefabParent: 0

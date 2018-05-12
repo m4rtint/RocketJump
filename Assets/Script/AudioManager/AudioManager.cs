@@ -99,11 +99,11 @@ public class AudioManager : MonoBehaviour {
 	public void Point() {
         if (EasterEgg)
         {
-            PLAY(AUDIO.EASTER_Point, 0);
+            PLAY(AUDIO.EASTER_Point, 1);
         }
         else
         {
-            PLAY(AUDIO.Point, 0);
+            PLAY(AUDIO.Point, 1);
         }
     }
 	#endregion
