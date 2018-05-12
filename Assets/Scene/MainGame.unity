@@ -88,6 +88,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaDirect: 0.5
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
+    m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -109,6 +110,8 @@ NavMeshSettings:
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
+    debug:
+      m_Flags: 0
   m_NavMeshData: {fileID: 0}
 --- !u!1 &58511811 stripped
 GameObject:
@@ -424,19 +427,19 @@ Prefab:
         type: 2}
       propertyPath: m_medals.Array.data[0]
       value: 
-      objectReference: {fileID: 21300000, guid: 2012d22963a424441b0d2a7e22891b7e,
+      objectReference: {fileID: 21300000, guid: 87ca1441c5613f040bfd10cdc32bb8f9,
         type: 3}
     - target: {fileID: 114764517204007096, guid: 3339a18f7973c80408c576d58309dd22,
         type: 2}
       propertyPath: m_medals.Array.data[1]
       value: 
-      objectReference: {fileID: 21300000, guid: 164df9484227f4ac7b8fa10a21a5982f,
+      objectReference: {fileID: 21300000, guid: f333c8d9b325bfa48a82a05196a9f97f,
         type: 3}
     - target: {fileID: 114764517204007096, guid: 3339a18f7973c80408c576d58309dd22,
         type: 2}
       propertyPath: m_medals.Array.data[2]
       value: 
-      objectReference: {fileID: 21300000, guid: d082b6251598640a69c0505cd4f496d2,
+      objectReference: {fileID: 21300000, guid: 32fd3b422b25ea040a1118e8415c7035,
         type: 3}
     - target: {fileID: 114764517204007096, guid: 3339a18f7973c80408c576d58309dd22,
         type: 2}
@@ -1771,8 +1774,23 @@ Prefab:
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 759fbba1d8e184f46a47f9ec35b2ebfe,
+      objectReference: {fileID: 21300000, guid: f6ccc2ea9cdb1ec4fa0acfe6f0f70ba4,
         type: 3}
+    - target: {fileID: 212991007209075254, guid: 2bad48bb40c924dfbb0d5f77d17b743b,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212991007209075254, guid: 2bad48bb40c924dfbb0d5f77d17b743b,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212991007209075254, guid: 2bad48bb40c924dfbb0d5f77d17b743b,
+        type: 2}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2bad48bb40c924dfbb0d5f77d17b743b, type: 2}
   m_IsPrefabParent: 0
@@ -1927,11 +1945,11 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
-  m_StereoMirrorMode: 0
 --- !u!4 &1890563697
 Transform:
   m_ObjectHideFlags: 0
