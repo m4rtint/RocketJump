@@ -88,7 +88,6 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaDirect: 0.5
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
-    m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -110,8 +109,6 @@ NavMeshSettings:
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
-    debug:
-      m_Flags: 0
   m_NavMeshData: {fileID: 0}
 --- !u!1 &58511811 stripped
 GameObject:
@@ -173,6 +170,11 @@ Prefab:
     - target: {fileID: 4847239982114718, guid: e94dfbd42a4d6aa4b8941d946f8f2d39, type: 2}
       propertyPath: m_RootOrder
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 61366043459572090, guid: e94dfbd42a4d6aa4b8941d946f8f2d39,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: -0.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e94dfbd42a4d6aa4b8941d946f8f2d39, type: 2}
@@ -717,10 +719,10 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1440, y: 2960}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -1307,6 +1309,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114971318304036952, guid: 1298d3b0664997143b76064c0e0cf316,
+        type: 2}
+      propertyPath: m_bushes.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4670169966290968, guid: 1298d3b0664997143b76064c0e0cf316, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1489,6 +1496,11 @@ Prefab:
         type: 2}
       propertyPath: m_Size.y
       value: 2.9833333
+      objectReference: {fileID: 0}
+    - target: {fileID: 114971318304036952, guid: 1298d3b0664997143b76064c0e0cf316,
+        type: 2}
+      propertyPath: m_bushes.Array.data[2]
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1298d3b0664997143b76064c0e0cf316, type: 2}
@@ -1915,11 +1927,11 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+  m_StereoMirrorMode: 0
 --- !u!4 &1890563697
 Transform:
   m_ObjectHideFlags: 0
