@@ -1993,22 +1993,22 @@ Prefab:
         type: 2}
       propertyPath: EASTER_MenuClick
       value: 
-      objectReference: {fileID: 8300000, guid: 93f28ad4dad1a5a4b99d04a3caa1be7a, type: 3}
+      objectReference: {fileID: 8300000, guid: 5e237e0eac1a8174c80f9829fc5fb289, type: 3}
     - target: {fileID: 114242465263724134, guid: 07df1104cf70134448e2d3c3e375b8df,
         type: 2}
       propertyPath: EASTER_Flap
       value: 
-      objectReference: {fileID: 8300000, guid: f619bb8e251f64f40981fe61977d6582, type: 3}
+      objectReference: {fileID: 8300000, guid: cacf0fb923a435f4fbd22420c1dc613e, type: 3}
     - target: {fileID: 114242465263724134, guid: 07df1104cf70134448e2d3c3e375b8df,
         type: 2}
       propertyPath: EASTER_Death
       value: 
-      objectReference: {fileID: 8300000, guid: 71a32fc333feb49488c62c3c718fbaea, type: 3}
+      objectReference: {fileID: 8300000, guid: 317980ae7e2c7ba4e9d49f204c1b79d7, type: 3}
     - target: {fileID: 114242465263724134, guid: 07df1104cf70134448e2d3c3e375b8df,
         type: 2}
       propertyPath: EASTER_Point
       value: 
-      objectReference: {fileID: 8300000, guid: a6a7e5f1d35cc3248a1f7c7ec964edeb, type: 3}
+      objectReference: {fileID: 8300000, guid: 2529b5ce691848345ac96944e673269f, type: 3}
     - target: {fileID: 114048838943159114, guid: 07df1104cf70134448e2d3c3e375b8df,
         type: 2}
       propertyPath: EasterEgg
