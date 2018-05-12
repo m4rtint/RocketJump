@@ -10,6 +10,9 @@ public class AudioManager : MonoBehaviour {
 	AudioSource[] m_audioSources;
 	AudioData AUDIO;
 
+    [SerializeField]
+    bool EasterEgg;
+
     #region Mono
     void Awake() {
 		if (instance == null)
@@ -61,21 +64,47 @@ public class AudioManager : MonoBehaviour {
 	#region Sounds
 	//Place Different Sound effects here
 	public void MenuClick() {
-		PLAY (AUDIO.MenuClick, 0);
-	}
+        if (EasterEgg)
+        {
+            PLAY(AUDIO.EASTER_MenuClick, 0);
+        } else
+        { 
+            PLAY (AUDIO.MenuClick, 0);
+        }
+    }
 
 	public void Flap(){
 		if (!m_audioSources[0].isPlaying) {
-			PLAY (AUDIO.Flap, 0);
-		}
+            if(EasterEgg)
+            {
+                PLAY(AUDIO.EASTER_Flap, 0);
+            } else
+            {
+                PLAY(AUDIO.Flap, 0);
+            }
+        }
 	}
 
 	public void Death() {
-		PLAY (AUDIO.Death,0);
-	}
+        if (EasterEgg)
+        {
+            PLAY(AUDIO.EASTER_Death, 0);
+        }
+        else
+        {
+            PLAY(AUDIO.Death, 0);
+        }
+    }
 
 	public void Point() {
-		PLAY (AUDIO.Point,1);
-	}
+        if (EasterEgg)
+        {
+            PLAY(AUDIO.EASTER_Point, 0);
+        }
+        else
+        {
+            PLAY(AUDIO.Point, 0);
+        }
+    }
 	#endregion
 }

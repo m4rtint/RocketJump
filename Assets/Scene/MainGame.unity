@@ -1893,22 +1893,42 @@ Prefab:
         type: 2}
       propertyPath: Flap
       value: 
-      objectReference: {fileID: 8300000, guid: f619bb8e251f64f40981fe61977d6582, type: 3}
+      objectReference: {fileID: 8300000, guid: 2eb6b3b2c58394e468f6f517cbdfd4a3, type: 3}
     - target: {fileID: 114242465263724134, guid: 07df1104cf70134448e2d3c3e375b8df,
         type: 2}
       propertyPath: Death
       value: 
-      objectReference: {fileID: 8300000, guid: 71a32fc333feb49488c62c3c718fbaea, type: 3}
+      objectReference: {fileID: 8300000, guid: 4bf095ca6011a4f1f972ab9d83b2168e, type: 3}
     - target: {fileID: 114242465263724134, guid: 07df1104cf70134448e2d3c3e375b8df,
         type: 2}
       propertyPath: Point
       value: 
-      objectReference: {fileID: 8300000, guid: a6a7e5f1d35cc3248a1f7c7ec964edeb, type: 3}
+      objectReference: {fileID: 8300000, guid: 22b37096d2c2d48ef890a8055cd53046, type: 3}
     - target: {fileID: 114242465263724134, guid: 07df1104cf70134448e2d3c3e375b8df,
         type: 2}
       propertyPath: MenuClick
       value: 
+      objectReference: {fileID: 8300000, guid: d64eab22d9a2a418a85b30fbb673794a, type: 3}
+    - target: {fileID: 114242465263724134, guid: 07df1104cf70134448e2d3c3e375b8df,
+        type: 2}
+      propertyPath: EASTER_MenuClick
+      value: 
       objectReference: {fileID: 8300000, guid: 93f28ad4dad1a5a4b99d04a3caa1be7a, type: 3}
+    - target: {fileID: 114242465263724134, guid: 07df1104cf70134448e2d3c3e375b8df,
+        type: 2}
+      propertyPath: EASTER_Flap
+      value: 
+      objectReference: {fileID: 8300000, guid: f619bb8e251f64f40981fe61977d6582, type: 3}
+    - target: {fileID: 114242465263724134, guid: 07df1104cf70134448e2d3c3e375b8df,
+        type: 2}
+      propertyPath: EASTER_Death
+      value: 
+      objectReference: {fileID: 8300000, guid: 71a32fc333feb49488c62c3c718fbaea, type: 3}
+    - target: {fileID: 114242465263724134, guid: 07df1104cf70134448e2d3c3e375b8df,
+        type: 2}
+      propertyPath: EASTER_Point
+      value: 
+      objectReference: {fileID: 8300000, guid: a6a7e5f1d35cc3248a1f7c7ec964edeb, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 07df1104cf70134448e2d3c3e375b8df, type: 2}
   m_IsPrefabParent: 0
