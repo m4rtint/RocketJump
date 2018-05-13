@@ -374,6 +374,12 @@ GameObject:
   m_PrefabParentObject: {fileID: 1373630607420880, guid: 07df1104cf70134448e2d3c3e375b8df,
     type: 2}
   m_PrefabInternal: {fileID: 1767223857}
+--- !u!114 &266704294 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114048838943159114, guid: 07df1104cf70134448e2d3c3e375b8df,
+    type: 2}
+  m_PrefabInternal: {fileID: 1767223857}
+  m_Script: {fileID: 11500000, guid: 8cd81b639963047088550de30925f936, type: 3}
 --- !u!82 &266704298
 AudioSource:
   m_ObjectHideFlags: 0
@@ -719,7 +725,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1841410851548750, guid: a2a39501578acd946b304a5f6323fd88, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224016352027168734, guid: a2a39501578acd946b304a5f6323fd88,
         type: 2}
@@ -894,47 +900,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
---- !u!1 &658261280
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 658261282}
-  - component: {fileID: 658261281}
-  m_Layer: 0
-  m_Name: AdmobManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &658261281
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 658261280}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b2423b204b274d079c1eb54e5a22264, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_DEBUGADMOB: 1
---- !u!4 &658261282
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 658261280}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 922.5456, y: 1174.979, z: 20.327574}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &720172884 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1935956539819664, guid: c8df8b4d19aee7c40bc0681f4368f3ea,
@@ -1221,7 +1186,7 @@ Prefab:
       objectReference: {fileID: 1917724182}
     - target: {fileID: 1935956539819664, guid: c8df8b4d19aee7c40bc0681f4368f3ea, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c8df8b4d19aee7c40bc0681f4368f3ea, type: 2}
@@ -1346,6 +1311,58 @@ GameObject:
   m_PrefabParentObject: {fileID: 1820045113884270, guid: a2a39501578acd946b304a5f6323fd88,
     type: 2}
   m_PrefabInternal: {fileID: 490006142}
+--- !u!1 &1419220277 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1090245935343882, guid: c8df8b4d19aee7c40bc0681f4368f3ea,
+    type: 2}
+  m_PrefabInternal: {fileID: 945919706}
+--- !u!114 &1419220283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1419220277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 266704294}
+          m_MethodName: StartEasterEggActivation
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 266704294}
+          m_MethodName: StopEasterEggActivation
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!1 &1449810299 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1927724969688590, guid: 2bad48bb40c924dfbb0d5f77d17b743b,
@@ -1460,6 +1477,48 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.64102566, y: 0.21794872}
   m_EdgeRadius: 0
+--- !u!1001 &1489937132
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4412042754813414, guid: 6c33588810fe7bd4db2ea9c25d1e5721, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 922.5456
+      objectReference: {fileID: 0}
+    - target: {fileID: 4412042754813414, guid: 6c33588810fe7bd4db2ea9c25d1e5721, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1174.979
+      objectReference: {fileID: 0}
+    - target: {fileID: 4412042754813414, guid: 6c33588810fe7bd4db2ea9c25d1e5721, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 20.327574
+      objectReference: {fileID: 0}
+    - target: {fileID: 4412042754813414, guid: 6c33588810fe7bd4db2ea9c25d1e5721, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4412042754813414, guid: 6c33588810fe7bd4db2ea9c25d1e5721, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4412042754813414, guid: 6c33588810fe7bd4db2ea9c25d1e5721, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4412042754813414, guid: 6c33588810fe7bd4db2ea9c25d1e5721, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4412042754813414, guid: 6c33588810fe7bd4db2ea9c25d1e5721, type: 2}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 6c33588810fe7bd4db2ea9c25d1e5721, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &1492735015
 Prefab:
   m_ObjectHideFlags: 0

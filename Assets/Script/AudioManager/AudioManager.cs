@@ -10,8 +10,10 @@ public class AudioManager : MonoBehaviour {
 	AudioSource[] m_audioSources;
 	AudioData AUDIO;
 
+    //Easter egg
     [SerializeField]
     bool EasterEgg;
+    float EasterEggActivationSeconds;
 
     #region Mono
     void Awake() {
@@ -27,7 +29,9 @@ public class AudioManager : MonoBehaviour {
 	void SetupVariable() {
 		m_audioSources = GetComponents<AudioSource> ();
         AUDIO = GetComponent<AudioData> ();
-	}
+        EasterEggActivationSeconds = 3.0f;
+        SetMute(IsMuted());
+    }
 	#endregion
 
 	#region Mute
@@ -106,5 +110,26 @@ public class AudioManager : MonoBehaviour {
             PLAY(AUDIO.Point, 1);
         }
     }
-	#endregion
+    #endregion
+
+    #region EasterEgg
+    public void StartEasterEggActivation()
+    {
+        if (IsMuted())
+        {
+            StartCoroutine("SetEasterEgg");
+        }
+    }
+
+    public void StopEasterEggActivation()
+    {
+        StopCoroutine("SetEasterEgg");
+    }
+
+    IEnumerator SetEasterEgg()
+    {
+        yield return new WaitForSeconds(EasterEggActivationSeconds);
+        EasterEgg = !EasterEgg;
+    }
+    #endregion
 }
