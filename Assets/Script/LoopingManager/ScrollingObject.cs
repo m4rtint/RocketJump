@@ -24,7 +24,7 @@ public class ScrollingObject : MonoBehaviour {
 
     void Update()
     {
-       if (transform.position.x < -m_groundHorizontalLength)
+       if (transform.position.x < -m_groundHorizontalLength*1.5)
         {
             RepositionBackground();
         }
@@ -44,7 +44,7 @@ public class ScrollingObject : MonoBehaviour {
     #region Reposition
     private void RepositionBackground()
     {
-        Vector2 groundOffSet = new Vector2(m_groundHorizontalLength * 2f, 0);
+        Vector2 groundOffSet = new Vector2(m_groundHorizontalLength * 3f, 0);
         transform.position = (Vector2)transform.position + groundOffSet;
     }
 
