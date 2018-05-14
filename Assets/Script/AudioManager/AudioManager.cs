@@ -43,7 +43,7 @@ public class AudioManager : MonoBehaviour {
 	//Muted - 1 : True 
 	//Not Muted - 0 : False
 	public bool IsMuted() {
-		int isMuted = PlayerPrefs.GetInt ("Mute", 1);
+		int isMuted = PlayerPrefs.GetInt ("Mute", 0);
 		return (isMuted == 1);
 	}
 	#endregion
