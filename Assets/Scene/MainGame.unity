@@ -1276,6 +1276,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 114381651614459926, guid: 6c33588810fe7bd4db2ea9c25d1e5721,
+        type: 2}
+      propertyPath: m_DEBUGADMOB
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6c33588810fe7bd4db2ea9c25d1e5721, type: 2}
   m_IsPrefabParent: 0
@@ -1531,12 +1536,12 @@ Prefab:
         type: 2}
       propertyPath: Death
       value: 
-      objectReference: {fileID: 8300000, guid: 4bf095ca6011a4f1f972ab9d83b2168e, type: 3}
+      objectReference: {fileID: 8300000, guid: 333a82e300a744e18aa5350c8f6002a4, type: 3}
     - target: {fileID: 114242465263724134, guid: 07df1104cf70134448e2d3c3e375b8df,
         type: 2}
       propertyPath: Point
       value: 
-      objectReference: {fileID: 8300000, guid: 22b37096d2c2d48ef890a8055cd53046, type: 3}
+      objectReference: {fileID: 8300000, guid: 7dcbed06f72574a93ab0ef3ec74c5f0a, type: 3}
     - target: {fileID: 114242465263724134, guid: 07df1104cf70134448e2d3c3e375b8df,
         type: 2}
       propertyPath: MenuClick
