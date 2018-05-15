@@ -245,7 +245,7 @@ PlayerSettings:
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: /Users/Martin/Dropbox (Personal)/Extra/BirdyHopKeyStore.keystore
+  AndroidKeystoreName: /Users/Martin/Dropbox (Personal)/Extra/BirdyHop/BirdyHopKeyStore.keystore
   AndroidKeyaliasName: lofike
   AndroidTVCompatibility: 1
   AndroidIsGame: 1
