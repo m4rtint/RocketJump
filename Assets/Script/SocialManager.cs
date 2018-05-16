@@ -23,13 +23,23 @@ public class SocialManager : MonoBehaviour {
 	//Language
 	string TWEET_LANGUAGE = "en";
 
-	//This is the text which you want to show
-	string textToDisplay="Hey Guys! Check out my score: ";
-
 	// Twitter Share Button	
-	public void shareScoreOnTwitter () 
+	public void ShareScoreOnTwitter() 
 	{
-		Application.OpenURL (TWITTER_ADDRESS + "?text=" + WWW.EscapeURL(textToDisplay) + ScoreManager.instance.m_score + "&amp;lang=" + WWW.EscapeURL(TWEET_LANGUAGE));
+		//This is the text which you want to show
+		string AND_textToDisplay="WOW! I scored :"+ScoreManager.instance.m_score +" in the #BirdyHop game on Android https://play.google.com/store/apps/details?id=com.MartinTsang.BirdyHop";
+		string IOS_textToDisplay="WOW! I scored :"+ScoreManager.instance.m_score +" in the #BirdyHop game on iOS https://itunes.apple.com/us/app/birdy-hop/id1384642685?ls=1&mt=8";
+
+		string textToDisplay = AND_textToDisplay;
+		#if UNITY_IPHONE
+		textToDisplay = IOS_textToDisplay;
+		#endif
+
+		string shareURL = TWITTER_ADDRESS + "?text=" + WWW.EscapeURL (textToDisplay) + "&amp;lang=" + WWW.EscapeURL (TWEET_LANGUAGE);
+		Debug.Log (shareURL);
+
+		Application.OpenURL(shareURL);
+	
 	}
 	#endregion
 }
