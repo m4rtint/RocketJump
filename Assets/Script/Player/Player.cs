@@ -39,9 +39,11 @@ public class Player : MonoBehaviour {
         m_Animator = GetComponent<Animator>();
     }
 
-
-	void Update() {
-		Movement();
+    void FixedUpdate()
+    {
+        Movement();
+    }
+    void Update() {
         DoAnimation();
 	}
 
