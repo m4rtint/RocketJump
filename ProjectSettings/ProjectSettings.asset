@@ -126,7 +126,7 @@ PlayerSettings:
     16:10: 0
     16:9: 0
     Others: 0
-  bundleVersion: 1.0.2
+  bundleVersion: 1.0.7
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -161,8 +161,8 @@ PlayerSettings:
     Android: com.MartinTsang.BirdyHop
     iOS: com.MartinTsang.BirdyHop
   buildNumber:
-    iOS: 3
-  AndroidBundleVersionCode: 4
+    iOS: 4
+  AndroidBundleVersionCode: 8
   AndroidMinSdkVersion: 21
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
@@ -186,7 +186,7 @@ PlayerSettings:
   tvOSTargetOSVersionString: 9.0
   uIPrerenderedIcon: 0
   uIRequiresPersistentWiFi: 0
-  uIRequiresFullScreen: 0
+  uIRequiresFullScreen: 1
   uIStatusBarHidden: 1
   uIExitOnSuspend: 0
   uIStatusBarStyle: 0
@@ -245,7 +245,7 @@ PlayerSettings:
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: F:/Dropbox/Project/BirdyHop/BirdyHopKeyStore.keystore
+  AndroidKeystoreName: /Users/Martin/Dropbox (Personal)/Project/BirdyHop/BirdyHopKeyStore.keystore
   AndroidKeyaliasName: lofike
   AndroidTVCompatibility: 1
   AndroidIsGame: 1
@@ -640,6 +640,7 @@ PlayerSettings:
   XboxOneSplashScreen: {fileID: 0}
   XboxOneAllowedProductIds: []
   XboxOnePersistentLocalStorageSize: 0
+  XboxOneXTitleMemory: 8
   xboxOneScriptCompiler: 0
   vrEditorSettings:
     daydream:
