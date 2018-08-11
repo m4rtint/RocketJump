@@ -12,7 +12,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: Martin PH Tsang
-  productName: Birdy Hop
+  productName: Pengy Hop
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -126,7 +126,7 @@ PlayerSettings:
     16:10: 0
     16:9: 0
     Others: 0
-  bundleVersion: 1.0.2
+  bundleVersion: 1.0.0
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -158,11 +158,11 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.MartinTsang.BirdyHop
+    Android: com.MartinTsang.PengyHop
     iOS: com.MartinTsang.BirdyHop
   buildNumber:
     iOS: 3
-  AndroidBundleVersionCode: 4
+  AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 21
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
@@ -245,8 +245,8 @@ PlayerSettings:
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: F:/Dropbox/Project/BirdyHop/BirdyHopKeyStore.keystore
-  AndroidKeyaliasName: lofike
+  AndroidKeystoreName: F:/Dropbox/Project/BirdyHop/PengyHop.keystore
+  AndroidKeyaliasName: 
   AndroidTVCompatibility: 1
   AndroidIsGame: 1
   AndroidEnableTango: 0
@@ -262,7 +262,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 98cefde54cfe8684c90bb63195675984, type: 3}
+      m_Icon: {fileID: 2800000, guid: ebf57ebea7fd98d42b2edc225c70d7e5, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0
