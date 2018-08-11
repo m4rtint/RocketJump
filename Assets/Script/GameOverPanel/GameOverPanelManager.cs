@@ -20,6 +20,8 @@ public class GameOverPanelManager : MonoBehaviour {
 	GameObject m_bestScore;
 	[SerializeField]
 	GameObject m_medalImage;
+    [SerializeField]
+    bool isWinterTheme;
 
 	//CanvasRenderer
     GameObject[] m_GameObjectsWithImage;
@@ -113,12 +115,14 @@ public class GameOverPanelManager : MonoBehaviour {
 	}
 
 	void UpdateGameOverScore(){
-		string scoreDisplay = "SCORE:\n" + ScoreManager.instance.m_score;
+        string score = isWinterTheme? "Score:\n" : "SCORE:\n";
+		string scoreDisplay = score + ScoreManager.instance.m_score;
 		m_gameOverScore.GetComponent<Text> ().text = scoreDisplay;
 	}
 
 	void UpdateGameOverBestScore() {
-		string bestScoreDisplay = "BEST:\n" + ScoreManager.instance.HighScore ();
+        string best = isWinterTheme ? "Best:\n" : "BEST:\n";
+        string bestScoreDisplay = best + ScoreManager.instance.HighScore ();
 			m_bestScore.GetComponent<Text>().text = bestScoreDisplay;
 	}
 #endregion
