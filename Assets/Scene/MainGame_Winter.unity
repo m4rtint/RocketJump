@@ -283,7 +283,7 @@ Prefab:
     - target: {fileID: 114167501164332792, guid: 3339a18f7973c80408c576d58309dd22,
         type: 2}
       propertyPath: m_FontData.m_FontStyle
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114167501164332792, guid: 3339a18f7973c80408c576d58309dd22,
         type: 2}
@@ -457,6 +457,25 @@ Prefab:
         type: 2}
       propertyPath: isWinterTheme
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114505266329802784, guid: 3339a18f7973c80408c576d58309dd22,
+        type: 2}
+      propertyPath: m_FontData.m_FontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114505266329802784, guid: 3339a18f7973c80408c576d58309dd22,
+        type: 2}
+      propertyPath: m_Text
+      value: 'Best
+
+        35'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114167501164332792, guid: 3339a18f7973c80408c576d58309dd22,
+        type: 2}
+      propertyPath: m_Text
+      value: 'Score
+
+        999'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3339a18f7973c80408c576d58309dd22, type: 2}
@@ -1254,7 +1273,7 @@ Prefab:
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: f5924c64ba99fb94590c9cbd4f277420,
+      objectReference: {fileID: 21300000, guid: cd7d74d9985be3f4c98b1a2eedbe0e3f,
         type: 3}
     - target: {fileID: 1692479745618774, guid: 1298d3b0664997143b76064c0e0cf316, type: 2}
       propertyPath: m_Name
@@ -1683,6 +1702,10 @@ Prefab:
       propertyPath: m_DEBUGADMOB
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1250724730242476, guid: 6c33588810fe7bd4db2ea9c25d1e5721, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6c33588810fe7bd4db2ea9c25d1e5721, type: 2}
   m_IsPrefabParent: 0
@@ -1897,6 +1920,11 @@ Prefab:
         type: 2}
       propertyPath: m_Size.y
       value: 0.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 50032527836869760, guid: 2bad48bb40c924dfbb0d5f77d17b743b,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 61143670597066054, guid: 2bad48bb40c924dfbb0d5f77d17b743b, type: 2}
