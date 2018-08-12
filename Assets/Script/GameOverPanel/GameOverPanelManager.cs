@@ -115,13 +115,13 @@ public class GameOverPanelManager : MonoBehaviour {
 	}
 
 	void UpdateGameOverScore(){
-        string score = isWinterTheme? "Score:\n" : "SCORE:\n";
+        string score = isWinterTheme? "Score\n" : "SCORE:\n";
 		string scoreDisplay = score + ScoreManager.instance.m_score;
 		m_gameOverScore.GetComponent<Text> ().text = scoreDisplay;
 	}
 
 	void UpdateGameOverBestScore() {
-        string best = isWinterTheme ? "Best:\n" : "BEST:\n";
+        string best = isWinterTheme ? "Best\n" : "BEST:\n";
         string bestScoreDisplay = best + ScoreManager.instance.HighScore ();
 			m_bestScore.GetComponent<Text>().text = bestScoreDisplay;
 	}

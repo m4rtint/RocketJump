@@ -228,7 +228,7 @@ Prefab:
     - target: {fileID: 224057607628467058, guid: 3339a18f7973c80408c576d58309dd22,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0.8
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 224057607628467058, guid: 3339a18f7973c80408c576d58309dd22,
         type: 2}
@@ -258,12 +258,12 @@ Prefab:
     - target: {fileID: 224057607628467058, guid: 3339a18f7973c80408c576d58309dd22,
         type: 2}
       propertyPath: m_AnchorMin.x
-      value: 0.2
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 224057607628467058, guid: 3339a18f7973c80408c576d58309dd22,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0.9
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114505266329802784, guid: 3339a18f7973c80408c576d58309dd22,
         type: 2}
@@ -355,7 +355,7 @@ Prefab:
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: d5b1be83080c2034f87354f553d8c8f9,
+      objectReference: {fileID: 21300000, guid: 36079e12d2168d44a86249b0491e336c,
         type: 3}
     - target: {fileID: 114764517204007096, guid: 3339a18f7973c80408c576d58309dd22,
         type: 2}
@@ -391,19 +391,19 @@ Prefab:
         type: 2}
       propertyPath: m_medals.Array.data[0]
       value: 
-      objectReference: {fileID: 21300000, guid: 8b7eb118fd9f0a646afc394e6c3d2cff,
+      objectReference: {fileID: 21300000, guid: ddd803fae78be144ab4e398bb8567c6c,
         type: 3}
     - target: {fileID: 114764517204007096, guid: 3339a18f7973c80408c576d58309dd22,
         type: 2}
       propertyPath: m_medals.Array.data[1]
       value: 
-      objectReference: {fileID: 21300000, guid: 0bcbf01ad521e99489d5cd0660e846b1,
+      objectReference: {fileID: 21300000, guid: d38b8531612cd074fb3433bc4989319a,
         type: 3}
     - target: {fileID: 114764517204007096, guid: 3339a18f7973c80408c576d58309dd22,
         type: 2}
       propertyPath: m_medals.Array.data[2]
       value: 
-      objectReference: {fileID: 21300000, guid: ebf57ebea7fd98d42b2edc225c70d7e5,
+      objectReference: {fileID: 21300000, guid: 7df5606489785a44aa3f9979d5e53836,
         type: 3}
     - target: {fileID: 114097882053799912, guid: 3339a18f7973c80408c576d58309dd22,
         type: 2}
@@ -1185,19 +1185,19 @@ Prefab:
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 838611917f6bb704685817d8f0f8bb94,
+      objectReference: {fileID: 21300000, guid: 9372c751de817cc48ac90fcd924d562a,
         type: 3}
     - target: {fileID: 212039123301891660, guid: 1298d3b0664997143b76064c0e0cf316,
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 838611917f6bb704685817d8f0f8bb94,
+      objectReference: {fileID: 21300000, guid: 9372c751de817cc48ac90fcd924d562a,
         type: 3}
     - target: {fileID: 212715588735186224, guid: 1298d3b0664997143b76064c0e0cf316,
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 838611917f6bb704685817d8f0f8bb94,
+      objectReference: {fileID: 21300000, guid: 9372c751de817cc48ac90fcd924d562a,
         type: 3}
     - target: {fileID: 212019928088734446, guid: 1298d3b0664997143b76064c0e0cf316,
         type: 2}
@@ -1273,7 +1273,7 @@ Prefab:
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: cd7d74d9985be3f4c98b1a2eedbe0e3f,
+      objectReference: {fileID: 21300000, guid: a1491ace65864cc43800688736f63647,
         type: 3}
     - target: {fileID: 1692479745618774, guid: 1298d3b0664997143b76064c0e0cf316, type: 2}
       propertyPath: m_Name
@@ -1290,6 +1290,51 @@ Prefab:
     - target: {fileID: 1952822355590140, guid: 1298d3b0664997143b76064c0e0cf316, type: 2}
       propertyPath: m_Name
       value: Iceberg_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 212280879081006752, guid: 1298d3b0664997143b76064c0e0cf316,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 15.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 212280879081006752, guid: 1298d3b0664997143b76064c0e0cf316,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 1.89
+      objectReference: {fileID: 0}
+    - target: {fileID: 212280879081006752, guid: 1298d3b0664997143b76064c0e0cf316,
+        type: 2}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212039123301891660, guid: 1298d3b0664997143b76064c0e0cf316,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 15.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 212039123301891660, guid: 1298d3b0664997143b76064c0e0cf316,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 1.89
+      objectReference: {fileID: 0}
+    - target: {fileID: 212039123301891660, guid: 1298d3b0664997143b76064c0e0cf316,
+        type: 2}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212715588735186224, guid: 1298d3b0664997143b76064c0e0cf316,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 15.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 212715588735186224, guid: 1298d3b0664997143b76064c0e0cf316,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 1.89
+      objectReference: {fileID: 0}
+    - target: {fileID: 212715588735186224, guid: 1298d3b0664997143b76064c0e0cf316,
+        type: 2}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1298d3b0664997143b76064c0e0cf316, type: 2}
@@ -1924,7 +1969,7 @@ Prefab:
     - target: {fileID: 50032527836869760, guid: 2bad48bb40c924dfbb0d5f77d17b743b,
         type: 2}
       propertyPath: m_Constraints
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 61143670597066054, guid: 2bad48bb40c924dfbb0d5f77d17b743b, type: 2}
