@@ -113,6 +113,22 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &10633875 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1900804813389008, guid: 5a4e2b7966b4a407b9761fb60a44f2aa,
+    type: 2}
+  m_PrefabInternal: {fileID: 2004985746}
+--- !u!114 &10633876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 10633875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9747ae9ef663dd4bb363ea1681f1fe4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &228330495
 Prefab:
   m_ObjectHideFlags: 0
@@ -376,7 +392,7 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2004985747}
+      objectReference: {fileID: 10633876}
     - target: {fileID: 114522353915220160, guid: 3339a18f7973c80408c576d58309dd22,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -476,6 +492,10 @@ Prefab:
       value: 'Score
 
         999'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1994260889727798, guid: 3339a18f7973c80408c576d58309dd22, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3339a18f7973c80408c576d58309dd22, type: 2}
@@ -1593,7 +1613,7 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2004985747}
+      objectReference: {fileID: 10633876}
     - target: {fileID: 114519491759603488, guid: c8df8b4d19aee7c40bc0681f4368f3ea,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -1706,6 +1726,10 @@ Prefab:
         type: 2}
       propertyPath: m_Text
       value: Tap to Jump
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916314174833842, guid: c8df8b4d19aee7c40bc0681f4368f3ea, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114970385981850652, guid: c8df8b4d19aee7c40bc0681f4368f3ea, type: 2}
@@ -2208,12 +2232,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5a4e2b7966b4a407b9761fb60a44f2aa, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &2004985747 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114426776525108006, guid: 5a4e2b7966b4a407b9761fb60a44f2aa,
-    type: 2}
-  m_PrefabInternal: {fileID: 2004985746}
-  m_Script: {fileID: 11500000, guid: 25667b1d4ef884b43bd94ebb1ffee6d5, type: 3}
 --- !u!1001 &2126818451
 Prefab:
   m_ObjectHideFlags: 0
