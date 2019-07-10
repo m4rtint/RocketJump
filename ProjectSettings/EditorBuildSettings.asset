@@ -6,5 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scene/MainGame_Winter.unity
-    guid: 17a0abfef829f114c82e4097eefc372f
+    path: Assets/Scene/MainGame.unity
+    guid: ae5ff059120c242da8388e175fe2675d
+  m_configObjects: {}
